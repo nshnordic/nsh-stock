@@ -12,14 +12,15 @@ No extra installation is needed - this uses only Python's standard library.
 
 import os
 import ssl
-from ftplib import FTP_TLS
+from ftplib import FTP, FTP_TLS
 
 # ---- Connection details from NSH (safe to keep in the file) ----------------
 HOST = "ftps.nshdk.dk"
 PORT = 21
-# The directory NSH gave was "//Jukka/stockfile". The exact form the server
-# expects can vary, so we try a few sensible options and use the first that works.
-DIR_CANDIDATES = ["/Jukka/stockfile", "Jukka/stockfile", "stockfile", "/"]
+# After login, NSH drops you straight into your own area, so the folder is
+# simply "stockfile". A few fall-backs are listed just in case.
+DIR_CANDIDATES = ["stockfile", "/stockfile", "./stockfile",
+                  "/Jukka/stockfile", "Jukka/stockfile", "."]
 FILE_PREFIX = "INVENTORY_NSH_FULL_"   # matched case-insensitively
 # ----------------------------------------------------------------------------
 
@@ -28,24 +29,33 @@ PASS = os.environ["NSH_FTP_PASS"]
 
 
 class ReusedFTP_TLS(FTP_TLS):
-    """Reuse the login TLS session on the data connection.
-    Many strict FTPS servers require this, otherwise downloads hang or fail."""
+    """Reuse the login TLS session on the data connection, wrapping it exactly
+    once. NSH's server requires this, otherwise listings and downloads fail
+    with 'TLS session not resumed'."""
     def ntransfercmd(self, cmd, rest=None):
-        conn, size = super().ntransfercmd(cmd, rest)
+        # Call the PLAIN FTP version to get an un-encrypted data socket,
+        # then wrap it a single time while reusing the control session.
+        conn, size = FTP.ntransfercmd(self, cmd, rest)
         if self._prot_p:
             conn = self.context.wrap_socket(
-                conn, server_hostname=self.host, session=self.sock.session
+                conn,
+                server_hostname=self.host,
+                session=self.sock.session,
             )
         return conn, size
 
 
 def main():
-    # NSH's certificate may not validate cleanly. The connection is still
-    # encrypted. Once everything works you can tighten this by deleting the
-    # two "ctx." lines below (which turns full certificate checking back on).
     ctx = ssl.create_default_context()
+    # NSH's certificate may not validate cleanly. The connection is still
+    # encrypted. (You can tighten this later by removing the next two lines.)
     ctx.check_hostname = False
     ctx.verify_mode = ssl.CERT_NONE
+    # Pin TLS 1.2: NSH's server needs the data connection to reuse the login
+    # session, which is reliable on 1.2. This is the key fix for the
+    # "TLS session of data connection not resumed" error.
+    ctx.minimum_version = ssl.TLSVersion.TLSv1_2
+    ctx.maximum_version = ssl.TLSVersion.TLSv1_2
 
     ftps = ReusedFTP_TLS(context=ctx)
     print(f"Connecting to {HOST}:{PORT} ...")
@@ -54,17 +64,21 @@ def main():
     ftps.prot_p()  # encrypt the data connection too
     print("Logged in.")
 
-    listing = None
+    # Find the folder: the first one we can open wins.
+    opened = None
     for d in DIR_CANDIDATES:
         try:
             ftps.cwd(d)
-            listing = ftps.nlst()
+            opened = d
             print(f"Opened directory: {d}")
             break
         except Exception as e:
             print(f"  (could not open '{d}': {e})")
-    if listing is None:
+    if opened is None:
         raise SystemExit("ERROR: could not open the stock directory on the server.")
+
+    # List the files in that folder.
+    listing = ftps.nlst()
 
     files = [
         n for n in listing
