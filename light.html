@@ -89,6 +89,13 @@
   footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);
     font-family:var(--mono);font-size:12px;color:var(--ink-faint);line-height:1.7}
   mark{background:rgba(12,143,126,.20);color:inherit;border-radius:2px;padding:0 1px}
+
+  .stalebar{display:none}
+  .stalebar.on{display:flex;align-items:flex-start;gap:11px;margin:0 0 22px;padding:15px 17px;
+    background:#fdf3dd;border:1px solid #c68f14;border-left:4px solid #a9720c;border-radius:11px;
+    color:#573a05;font-size:16px;line-height:1.45;font-weight:500}
+  .stalebar .warnicon{flex-shrink:0;width:24px;height:24px;border-radius:50%;background:#a9720c;color:#fff;
+    font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;font-family:var(--sans)}
 </style>
 </head>
 <body>
@@ -105,6 +112,8 @@
       <button data-lang="sv">SV</button>
     </div>
   </header>
+
+  <div id="stalebar" class="stalebar"></div>
 
   <h1 id="t-h1"></h1>
   <p class="sub" id="t-sub"></p>
@@ -129,6 +138,7 @@
    ============================================================ */
 var T = {
   en:{ h1:"Check item availability",
+    stale:"Stock figures have not updated since {d} ({n} days ago). NSH's data feed appears to be paused \u2014 please confirm availability with your NSH representative before relying on these numbers.",
     sub:"Enter an NSH item number or EAN barcode to see current stock and any incoming batch.",
     placeholder:"e.g. 100-197  or  4032922010238",
     hint:"Matches partial item numbers and EANs. Try \u201c100-\u201d to browse a series.",
@@ -145,6 +155,7 @@ var T = {
     loadFail:"Couldn\u2019t load stock.xml automatically (this is normal when opening the file directly on your computer).",
     loadBtn:"Choose the NSH XML file" },
   da:{ h1:"Tjek varens lagerstatus",
+    stale:"Lagertallene er ikke opdateret siden {d} ({n} dage siden). NSH's datafeed ser ud til at v\u00e6re sat p\u00e5 pause \u2014 bekr\u00e6ft venligst tilg\u00e6ngeligheden hos din NSH-repr\u00e6sentant, f\u00f8r du stoler p\u00e5 disse tal.",
     sub:"Indtast et NSH-varenummer eller en EAN-stregkode for at se aktuel lagerbeholdning og eventuelle kommende leverancer.",
     placeholder:"f.eks. 100-197  eller  4032922010238",
     hint:"S\u00f8ger ogs\u00e5 p\u00e5 dele af varenumre og EAN. Pr\u00f8v \u201c100-\u201d for at se en serie.",
@@ -161,6 +172,7 @@ var T = {
     loadFail:"Kunne ikke indl\u00e6se stock.xml automatisk (normalt n\u00e5r filen \u00e5bnes direkte p\u00e5 din computer).",
     loadBtn:"V\u00e6lg NSH XML-filen" },
   fi:{ h1:"Tarkista tuotteen saatavuus",
+    stale:"Varastolukuja ei ole p\u00e4ivitetty {d} j\u00e4lkeen ({n} p\u00e4iv\u00e4\u00e4 sitten). NSH:n datasy\u00f6te vaikuttaa pys\u00e4htyneen \u2014 varmista saatavuus NSH-edustajaltasi ennen kuin luotat n\u00e4ihin lukuihin.",
     sub:"Sy\u00f6t\u00e4 NSH-tuotenumero tai EAN-viivakoodi n\u00e4hd\u00e4ksesi varastosaldon ja mahdollisen saapuvan er\u00e4n.",
     placeholder:"esim. 100-197  tai  4032922010238",
     hint:"Hakee my\u00f6s osittaisilla tuotenumeroilla ja EAN-koodeilla. Kokeile \u201c100-\u201d selataksesi sarjaa.",
@@ -177,6 +189,7 @@ var T = {
     loadFail:"stock.xml-tiedostoa ei voitu ladata automaattisesti (normaalia, kun tiedosto avataan suoraan omalta koneelta).",
     loadBtn:"Valitse NSH XML-tiedosto" },
   sv:{ h1:"Kontrollera lagersaldo",
+    stale:"Lagersiffrorna har inte uppdaterats sedan {d} ({n} dagar sedan). NSH:s dataflöde verkar vara pausat \u2014 bekräfta tillgängligheten med din NSH-representant innan du förlitar dig på dessa siffror.",
     sub:"Ange ett NSH-artikelnummer eller en EAN-streckkod f\u00f6r att se aktuellt lagersaldo och eventuell inkommande leverans.",
     placeholder:"t.ex. 100-197  eller  4032922010238",
     hint:"S\u00f6ker \u00e4ven p\u00e5 delar av artikelnummer och EAN. Prova \u201c100-\u201d f\u00f6r att bl\u00e4ddra i en serie.",
@@ -225,12 +238,38 @@ var ICON_COPY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stro
 var ICON_DONE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
 var ICON_EXT  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>';
 
+/* ---- staleness warning -------------------------------------------------
+   NSH publishes a fresh file every 4 hours, so the count date should be
+   today. If it is older than STALE_AFTER_DAYS, show a clear warning.
+   Change the number below to make the warning stricter or more relaxed. */
+var STALE_AFTER_DAYS = 2;
+
+function daysOld(dateStr){
+  if(!dateStr) return null;
+  var m = /^(\d{4})-(\d{2})-(\d{2})/.exec(dateStr);
+  if(!m) return null;
+  var then = Date.UTC(+m[1], +m[2]-1, +m[3]);
+  var now = new Date();
+  var today = Date.UTC(now.getFullYear(), now.getMonth(), now.getDate());
+  return Math.round((today - then) / 86400000);
+}
+function updateStaleBar(){
+  var bar = document.getElementById('stalebar');
+  if(!bar) return;
+  var n = daysOld(meta.counted);
+  if(n === null || n < STALE_AFTER_DAYS){ bar.className='stalebar'; bar.innerHTML=''; return; }
+  bar.className = 'stalebar on';
+  bar.innerHTML = '<span class="warnicon">!</span><span>' +
+                  esc(fill(tr('stale'), {d: meta.counted, n: n})) + '</span>';
+}
+
 function applyStaticText(){
   document.getElementById('t-h1').textContent = tr('h1');
   document.getElementById('t-sub').textContent = tr('sub');
   document.getElementById('t-hint').textContent = tr('hint');
   q.setAttribute('placeholder', tr('placeholder'));
   document.getElementById('foot').textContent = fill(tr('foot'),{v:meta.vendor,d:meta.counted||'\u2014'});
+  updateStaleBar();
 }
 
 function statusOf(r){
