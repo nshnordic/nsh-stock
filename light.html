@@ -1,0 +1,439 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="robots" content="noindex, nofollow">
+<title>NSH Stock Lookup</title>
+<style>
+  :root{
+    --bg:#eceff3; --panel:#ffffff; --panel-2:#eef2f5; --line:#d5dde3;
+    --ink:#152230; --ink-dim:#54636f; --ink-faint:#87949f;
+    --accent:#0c8f7e; --accent-bright:#0b7a6b;
+    --ok:#118a4d; --warn:#a9720c; --incoming:#1667a8; --incoming-bg:#e8f1fb;
+    --mono:"SFMono-Regular",ui-monospace,"JetBrains Mono","Cascadia Code",Menlo,Consolas,monospace;
+    --sans:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
+  }
+  *{box-sizing:border-box}
+  html,body{margin:0}
+  body{background:var(--bg);color:var(--ink);font-family:var(--sans);
+    -webkit-font-smoothing:antialiased;line-height:1.5;padding:clamp(16px,4vw,48px)}
+  .wrap{max-width:800px;margin:0 auto}
+  header.top{display:flex;align-items:center;justify-content:space-between;gap:14px;flex-wrap:wrap;
+    border-bottom:1px solid var(--line);padding-bottom:16px;margin-bottom:24px}
+  .brand{display:flex;align-items:center;gap:13px}
+  .brand img{height:42px;width:auto;display:block}
+  .brand .word{font-family:var(--mono);font-size:13px;letter-spacing:.16em;text-transform:uppercase;
+    color:var(--accent-bright);border-left:1px solid var(--line);padding-left:13px}
+  .langs{display:flex;gap:5px}
+  .langs button{font-family:var(--mono);font-size:13px;letter-spacing:.06em;background:transparent;
+    border:1px solid var(--line);color:var(--ink-dim);padding:8px 13px;border-radius:8px;cursor:pointer;transition:.15s;
+    min-height:42px}
+  .langs button:hover{color:var(--ink);border-color:var(--ink-faint)}
+  .langs button.on{background:var(--accent);border-color:var(--accent);color:#ffffff;font-weight:700}
+  h1{font-size:clamp(26px,4vw,35px);margin:0 0 6px;font-weight:680;letter-spacing:-.01em}
+  .sub{color:var(--ink-dim);font-size:16.5px;margin:0 0 24px}
+  .searchbar{position:relative;margin-bottom:9px}
+  #q{width:100%;padding:19px 48px 19px 18px;font-family:var(--mono);font-size:19px;
+    background:var(--panel);border:1px solid var(--line);border-radius:12px;color:var(--ink);outline:none;transition:.15s;
+    box-shadow:0 1px 2px rgba(20,35,50,.04)}
+  #q:focus{border-color:var(--accent-bright);box-shadow:0 0 0 3px rgba(12,143,126,.18)}
+  #q::placeholder{color:var(--ink-faint)}
+  .clear{position:absolute;right:9px;top:50%;transform:translateY(-50%);background:none;border:0;
+    color:var(--ink-faint);font-size:24px;cursor:pointer;padding:8px;line-height:1;display:none}
+  .hint{font-family:var(--mono);font-size:13px;color:var(--ink-faint);margin:0 2px 22px}
+  .count{font-family:var(--mono);font-size:13px;color:var(--ink-dim);margin:0 2px 13px;min-height:17px}
+  .results{display:flex;flex-direction:column;gap:13px}
+  .card{background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:20px 22px;
+    border-left:3px solid var(--ink-faint);box-shadow:0 1px 3px rgba(20,35,50,.05)}
+  .card.s-ok{border-left-color:var(--ok)}
+  .card.s-low{border-left-color:var(--warn)}
+  .card.s-out{border-left-color:var(--ink-faint)}
+  .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
+  .left{min-width:0;flex:1 1 auto}
+  .pname{font-size:18px;font-weight:660;color:var(--ink);line-height:1.35;margin-bottom:10px}
+  .idrow{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:15.5px;line-height:1.7;margin:3px 0}
+  .idrow .lbl{color:var(--ink-faint);display:inline-block;min-width:54px}
+  .idrow .val{color:var(--ink);user-select:all}
+  .copy{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;flex-shrink:0;
+    background:var(--panel-2);border:1px solid var(--line);border-radius:7px;color:var(--ink-dim);cursor:pointer;transition:.12s}
+  .copy:hover{color:var(--ink);border-color:var(--ink-faint)}
+  .copy.done{color:var(--ok);border-color:var(--ok)}
+  .copy svg{width:16px;height:16px;display:block}
+  .status{display:inline-block;font-family:var(--mono);font-size:12px;letter-spacing:.07em;text-transform:uppercase;
+    padding:5px 10px;border-radius:6px;margin-top:10px}
+  .s-ok .status{background:rgba(17,138,77,.12);color:var(--ok)}
+  .s-low .status{background:rgba(169,114,12,.14);color:var(--warn)}
+  .s-out .status{background:rgba(84,99,111,.12);color:var(--ink-dim)}
+  .qty-block{text-align:right;flex-shrink:0}
+  .qty{font-family:var(--mono);font-size:41px;font-weight:660;line-height:1}
+  .s-ok .qty{color:var(--ok)} .s-low .qty{color:var(--warn)} .s-out .qty{color:var(--ink-dim)}
+  .qty-lbl{font-family:var(--mono);font-size:11px;letter-spacing:.12em;text-transform:uppercase;color:var(--ink-faint);margin-top:5px}
+  .readybar{margin-top:15px;background:var(--incoming-bg);border:1px solid rgba(22,103,168,.28);border-radius:10px;
+    padding:12px 14px;font-family:var(--mono);font-size:14.5px;color:var(--incoming);display:flex;align-items:center;gap:9px}
+  .readybar .dot{width:9px;height:9px;border-radius:50%;background:var(--incoming);flex-shrink:0}
+  .readybar b{color:#0c3d63;font-weight:700}
+  .note{margin-top:15px;padding-top:15px;border-top:1px dashed var(--line);font-size:14.5px;color:var(--ink-dim);line-height:1.5}
+  .cardfoot{display:flex;justify-content:space-between;align-items:center;gap:12px;flex-wrap:wrap;
+    margin-top:15px;padding-top:13px;border-top:1px solid var(--line)}
+  .counted{font-family:var(--mono);font-size:12.5px;color:var(--ink-faint)}
+  .nshlink{display:inline-flex;align-items:center;gap:6px;font-size:14px;color:var(--accent-bright);text-decoration:none;
+    font-weight:650;min-height:34px}
+  .nshlink:hover{text-decoration:underline}
+  .nshlink svg{width:14px;height:14px}
+  .empty{text-align:center;color:var(--ink-dim);padding:44px 20px;font-size:15.5px}
+  .empty .big{font-family:var(--mono);font-size:16.5px;color:var(--ink);margin-bottom:7px}
+  .loadbox{text-align:center;padding:36px 20px;color:var(--ink-dim);font-size:15px}
+  .loadbox button{margin-top:15px;font-family:var(--sans);font-size:15px;background:var(--accent);border:0;
+    color:#ffffff;font-weight:600;padding:12px 20px;border-radius:9px;cursor:pointer}
+  footer{margin-top:34px;padding-top:16px;border-top:1px solid var(--line);
+    font-family:var(--mono);font-size:12px;color:var(--ink-faint);line-height:1.7}
+  mark{background:rgba(12,143,126,.20);color:inherit;border-radius:2px;padding:0 1px}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header class="top">
+    <div class="brand">
+      <img src="nsh-logo.png" alt="NSH Nordic">
+      <span class="word">Stock Lookup</span>
+    </div>
+    <div class="langs" id="langs">
+      <button data-lang="en" class="on">EN</button>
+      <button data-lang="da">DA</button>
+      <button data-lang="fi">FI</button>
+      <button data-lang="sv">SV</button>
+    </div>
+  </header>
+
+  <h1 id="t-h1"></h1>
+  <p class="sub" id="t-sub"></p>
+
+  <div class="searchbar">
+    <input id="q" type="text" inputmode="search" autocomplete="off" spellcheck="false" aria-label="search">
+    <button class="clear" id="clear" aria-label="clear">&times;</button>
+  </div>
+  <p class="hint" id="t-hint"></p>
+
+  <div class="count" id="count"></div>
+  <div class="results" id="results"></div>
+  <div id="loader"></div>
+
+  <footer id="foot"></footer>
+</div>
+
+<script>
+/* ============================================================
+   TRANSLATIONS  ({q}=term  {n}=number  {d}=date)
+   Edit any wording here. UK column in the names file = English.
+   ============================================================ */
+var T = {
+  en:{ h1:"Check item availability",
+    sub:"Enter an NSH item number or EAN barcode to see current stock and any incoming batch.",
+    placeholder:"e.g. 100-197  or  4032922010238",
+    hint:"Matches partial item numbers and EANs. Try \u201c100-\u201d to browse a series.",
+    item:"Item no.", ean:"EAN", inStockLbl:"In stock",
+    stOk:"In stock", stLow:"Low stock", stOut:"Out of stock",
+    incoming:"Incoming: <b>{n}</b> units \u2014 ready to be shipped <b>{d}</b>",
+    incomingNoDate:"Incoming: <b>{n}</b> units",
+    zeroNote:"None in stock and none confirmed to arrive \u2014 contact your NSH representative for more information.",
+    counted:"Counted {d}", nsh:"View on nshnordic.com", copy:"Copy", copied:"Copied",
+    one:"1 match", many:"{n} matches", capped:"{n} matches \u2014 showing first {c}",
+    noHitBig:"No match for \u201c{q}\u201d", noHitSub:"Check the item number or EAN and try again. Partial entries work too.",
+    foot:"Stock snapshot from {v}, counted {d}. Figures reflect the loaded feed, not live stock.",
+    loading:"Loading stock data\u2026",
+    loadFail:"Couldn\u2019t load stock.xml automatically (this is normal when opening the file directly on your computer).",
+    loadBtn:"Choose the NSH XML file" },
+  da:{ h1:"Tjek varens lagerstatus",
+    sub:"Indtast et NSH-varenummer eller en EAN-stregkode for at se aktuel lagerbeholdning og eventuelle kommende leverancer.",
+    placeholder:"f.eks. 100-197  eller  4032922010238",
+    hint:"S\u00f8ger ogs\u00e5 p\u00e5 dele af varenumre og EAN. Pr\u00f8v \u201c100-\u201d for at se en serie.",
+    item:"Varenr.", ean:"EAN", inStockLbl:"P\u00e5 lager",
+    stOk:"P\u00e5 lager", stLow:"Lav beholdning", stOut:"Ikke p\u00e5 lager",
+    incoming:"Kommende: <b>{n}</b> stk. \u2014 klar til forsendelse <b>{d}</b>",
+    incomingNoDate:"Kommende: <b>{n}</b> stk.",
+    zeroNote:"Ikke p\u00e5 lager, og ingen leverance er bekr\u00e6ftet \u2014 kontakt din NSH-repr\u00e6sentant for mere information.",
+    counted:"Optalt {d}", nsh:"Se p\u00e5 nshnordic.com", copy:"Kopi\u00e9r", copied:"Kopieret",
+    one:"1 resultat", many:"{n} resultater", capped:"{n} resultater \u2014 viser de f\u00f8rste {c}",
+    noHitBig:"Ingen match for \u201c{q}\u201d", noHitSub:"Kontroll\u00e9r varenummer eller EAN, og pr\u00f8v igen. Dele af numre virker ogs\u00e5.",
+    foot:"\u00d8jebliksbillede af lageret fra {v}, optalt {d}. Tallene afspejler den indl\u00e6ste fil, ikke live-lager.",
+    loading:"Indl\u00e6ser lagerdata\u2026",
+    loadFail:"Kunne ikke indl\u00e6se stock.xml automatisk (normalt n\u00e5r filen \u00e5bnes direkte p\u00e5 din computer).",
+    loadBtn:"V\u00e6lg NSH XML-filen" },
+  fi:{ h1:"Tarkista tuotteen saatavuus",
+    sub:"Sy\u00f6t\u00e4 NSH-tuotenumero tai EAN-viivakoodi n\u00e4hd\u00e4ksesi varastosaldon ja mahdollisen saapuvan er\u00e4n.",
+    placeholder:"esim. 100-197  tai  4032922010238",
+    hint:"Hakee my\u00f6s osittaisilla tuotenumeroilla ja EAN-koodeilla. Kokeile \u201c100-\u201d selataksesi sarjaa.",
+    item:"Tuotenro", ean:"EAN", inStockLbl:"Varastossa",
+    stOk:"Varastossa", stLow:"V\u00e4h\u00e4n varastossa", stOut:"Ei varastossa",
+    incoming:"Saapumassa: <b>{n}</b> kpl \u2014 valmis l\u00e4hetett\u00e4v\u00e4ksi <b>{d}</b>",
+    incomingNoDate:"Saapumassa: <b>{n}</b> kpl",
+    zeroNote:"Ei varastossa eik\u00e4 vahvistettua saapuvaa er\u00e4\u00e4 \u2014 ota yhteytt\u00e4 NSH-edustajaasi saadaksesi lis\u00e4tietoja.",
+    counted:"Laskettu {d}", nsh:"Avaa nshnordic.com", copy:"Kopioi", copied:"Kopioitu",
+    one:"1 osuma", many:"{n} osumaa", capped:"{n} osumaa \u2014 n\u00e4ytet\u00e4\u00e4n ensimm\u00e4iset {c}",
+    noHitBig:"Ei osumia haulle \u201c{q}\u201d", noHitSub:"Tarkista tuotenumero tai EAN ja yrit\u00e4 uudelleen. My\u00f6s osittaiset haut toimivat.",
+    foot:"Varaston tilannekuva l\u00e4hteest\u00e4 {v}, laskettu {d}. Luvut kuvaavat ladattua tiedostoa, eiv\u00e4t reaaliaikaista saldoa.",
+    loading:"Ladataan varastotietoja\u2026",
+    loadFail:"stock.xml-tiedostoa ei voitu ladata automaattisesti (normaalia, kun tiedosto avataan suoraan omalta koneelta).",
+    loadBtn:"Valitse NSH XML-tiedosto" },
+  sv:{ h1:"Kontrollera lagersaldo",
+    sub:"Ange ett NSH-artikelnummer eller en EAN-streckkod f\u00f6r att se aktuellt lagersaldo och eventuell inkommande leverans.",
+    placeholder:"t.ex. 100-197  eller  4032922010238",
+    hint:"S\u00f6ker \u00e4ven p\u00e5 delar av artikelnummer och EAN. Prova \u201c100-\u201d f\u00f6r att bl\u00e4ddra i en serie.",
+    item:"Art.nr", ean:"EAN", inStockLbl:"I lager",
+    stOk:"I lager", stLow:"L\u00e5gt saldo", stOut:"Slut i lager",
+    incoming:"Inkommande: <b>{n}</b> st \u2014 redo att skickas <b>{d}</b>",
+    incomingNoDate:"Inkommande: <b>{n}</b> st",
+    zeroNote:"Inte i lager och ingen leverans \u00e4r bekr\u00e4ftad \u2014 kontakta din NSH-representant f\u00f6r mer information.",
+    counted:"R\u00e4knat {d}", nsh:"Visa p\u00e5 nshnordic.com", copy:"Kopiera", copied:"Kopierad",
+    one:"1 tr\u00e4ff", many:"{n} tr\u00e4ffar", capped:"{n} tr\u00e4ffar \u2014 visar de f\u00f6rsta {c}",
+    noHitBig:"Ingen tr\u00e4ff f\u00f6r \u201c{q}\u201d", noHitSub:"Kontrollera artikelnummer eller EAN och f\u00f6rs\u00f6k igen. Delar av nummer fungerar ocks\u00e5.",
+    foot:"\u00d6gonblicksbild av lagret fr\u00e5n {v}, r\u00e4knat {d}. Siffrorna \u00e5terspeglar den inl\u00e4sta filen, inte live-saldo.",
+    loading:"L\u00e4ser in lagerdata\u2026",
+    loadFail:"Kunde inte l\u00e4sa in stock.xml automatiskt (normalt n\u00e4r filen \u00f6ppnas direkt p\u00e5 din dator).",
+    loadBtn:"V\u00e4lj NSH XML-filen" }
+};
+
+/* language -> NSH website path word */
+var NSH_WORD = { en:"english", da:"danish", fi:"finnish", sv:"swedish" };
+
+/* ============================ APP ============================ */
+var lang = "en";
+var records = [];
+var NAMES = null;                 // { ITEMUPPER: {da,sv,fi,en} }
+var meta = { vendor:"NSH NORDIC AS", counted:"" };
+var MAX = 40;
+
+var q = document.getElementById('q'),
+    results = document.getElementById('results'),
+    count = document.getElementById('count'),
+    clearBtn = document.getElementById('clear'),
+    loader = document.getElementById('loader');
+
+function tr(k){ return (T[lang] && T[lang][k]) || T.en[k] || k; }
+function fill(s,o){ return s.replace(/\{(\w+)\}/g,function(_,k){return (o&&o[k]!=null)?o[k]:'';}); }
+function esc(s){return (s+'').replace(/[&<>]/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;'}[c];});}
+function attr(s){return (s+'').replace(/[&<>"']/g,function(c){return{'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c];});}
+function hl(text,term){
+  if(!term) return esc(text);
+  var i=(text||'').toLowerCase().indexOf(term.toLowerCase());
+  if(i<0) return esc(text);
+  return esc(text.slice(0,i))+'<mark>'+esc(text.slice(i,i+term.length))+'</mark>'+esc(text.slice(i+term.length));
+}
+
+var ICON_COPY = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="9" y="9" width="11" height="11" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>';
+var ICON_DONE = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg>';
+var ICON_EXT  = '<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 3h6v6"/><path d="M10 14 21 3"/><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/></svg>';
+
+function applyStaticText(){
+  document.getElementById('t-h1').textContent = tr('h1');
+  document.getElementById('t-sub').textContent = tr('sub');
+  document.getElementById('t-hint').textContent = tr('hint');
+  q.setAttribute('placeholder', tr('placeholder'));
+  document.getElementById('foot').textContent = fill(tr('foot'),{v:meta.vendor,d:meta.counted||'\u2014'});
+}
+
+function statusOf(r){
+  if(r.qty<=0) return {cls:'s-out',label:tr('stOut')};
+  if(r.qty<10) return {cls:'s-low',label:tr('stLow')};
+  return {cls:'s-ok',label:tr('stOk')};
+}
+function nameFor(r){
+  if(!NAMES) return '';
+  var e = NAMES[(r.item||'').toUpperCase()];
+  if(!e) return '';
+  return (e[lang]||'').trim();
+}
+function nshUrl(r){
+  return 'https://www.nshnordic.com/'+(NSH_WORD[lang]||'english')+
+         '/product-search-result-page?q='+encodeURIComponent(r.item||'');
+}
+function copyBtn(value){
+  return '<button class="copy" data-copy="'+attr(value)+'" aria-label="'+attr(tr('copy'))+'" title="'+attr(tr('copy'))+'">'+ICON_COPY+'</button>';
+}
+
+function card(r,term){
+  var st=statusOf(r), nm=nameFor(r);
+  var extra='';
+  if(r.incomingQty){
+    var line = r.incomingDate
+      ? fill(tr('incoming'),{n:r.incomingQty,d:esc(r.incomingDate)})
+      : fill(tr('incomingNoDate'),{n:r.incomingQty});
+    extra = '<div class="readybar"><span class="dot"></span><span>'+line+'</span></div>';
+  } else if(r.qty<=0){
+    extra = '<div class="note">'+esc(tr('zeroNote'))+'</div>';
+  }
+  return '<div class="card '+st.cls+'">'+
+    '<div class="card-top">'+
+      '<div class="left">'+
+        (nm ? '<div class="pname">'+esc(nm)+'</div>' : '')+
+        '<div class="idrow"><span class="lbl">'+esc(tr('item'))+'</span>'+
+          '<span class="val">'+hl(r.item||'\u2014',term)+'</span>'+(r.item?copyBtn(r.item):'')+'</div>'+
+        '<div class="idrow"><span class="lbl">'+esc(tr('ean'))+'</span>'+
+          '<span class="val">'+hl(r.ean||'\u2014',term)+'</span>'+(r.ean?copyBtn(r.ean):'')+'</div>'+
+        '<div class="status">'+esc(st.label)+'</div>'+
+      '</div>'+
+      '<div class="qty-block"><div class="qty">'+r.qty+'</div><div class="qty-lbl">'+esc(tr('inStockLbl'))+'</div></div>'+
+    '</div>'+
+    extra+
+    '<div class="cardfoot">'+
+      '<span class="counted">'+fill(tr('counted'),{d:esc(r.counted||'\u2014')})+'</span>'+
+      (r.item ? '<a class="nshlink" href="'+attr(nshUrl(r))+'" target="_blank" rel="noopener">'+esc(tr('nsh'))+ICON_EXT+'</a>' : '')+
+    '</div>'+
+  '</div>';
+}
+
+function search(){
+  var term=q.value.trim();
+  clearBtn.style.display = term?'block':'none';
+  if(!term){ results.innerHTML=''; count.textContent=''; return; }
+  var t=term.toLowerCase(), exact=[], partial=[];
+  for(var i=0;i<records.length;i++){
+    var r=records[i], item=(r.item||'').toLowerCase(), ean=(r.ean||'').toLowerCase();
+    if(item===t||ean===t) exact.push(r);
+    else if(item.indexOf(t)>=0||ean.indexOf(t)>=0) partial.push(r);
+  }
+  var hits=exact.concat(partial);
+  if(!hits.length){
+    count.textContent='';
+    results.innerHTML='<div class="empty"><div class="big">'+fill(tr('noHitBig'),{q:esc(term)})+'</div>'+esc(tr('noHitSub'))+'</div>';
+    return;
+  }
+  count.textContent = hits.length===1 ? tr('one')
+    : (hits.length>MAX ? fill(tr('capped'),{n:hits.length,c:MAX}) : fill(tr('many'),{n:hits.length}));
+  results.innerHTML = hits.slice(0,MAX).map(function(r){return card(r,term);}).join('');
+}
+
+/* ---- copy handling (delegated) ---- */
+function copyText(v){
+  if(navigator.clipboard && navigator.clipboard.writeText) return navigator.clipboard.writeText(v);
+  return new Promise(function(res,rej){
+    try{ var t=document.createElement('textarea'); t.value=v; t.style.position='fixed'; t.style.opacity='0';
+      document.body.appendChild(t); t.focus(); t.select(); document.execCommand('copy'); document.body.removeChild(t); res(); }
+    catch(e){ rej(e); }
+  });
+}
+results.addEventListener('click',function(e){
+  var b=e.target.closest('.copy'); if(!b) return;
+  copyText(b.getAttribute('data-copy')).then(function(){
+    b.classList.add('done'); b.innerHTML=ICON_DONE;
+    setTimeout(function(){ b.classList.remove('done'); b.innerHTML=ICON_COPY; },1200);
+  }).catch(function(){});
+});
+
+/* ---- XML parsing (stock feed) ---- */
+function parseXML(xmlText){
+  var doc=new DOMParser().parseFromString(xmlText,"application/xml");
+  if(doc.querySelector('parsererror')) throw new Error('bad xml');
+  function txt(node,tag){ var e=node.getElementsByTagName(tag)[0]; return e&&e.textContent?e.textContent.trim():''; }
+  var head=doc.getElementsByTagName('Header')[0];
+  if(head){ meta.vendor=txt(head,'VendorName')||meta.vendor; }
+  var out=[], lines=doc.getElementsByTagName('Lines');
+  for(var i=0;i<lines.length;i++){
+    var L=lines[i], ean=txt(L,'VendorProductID'), item=txt(L,'ProductBarcode');
+    if(!ean&&!item) continue;
+    var qty=txt(L,'Quantity'), boq=txt(L,'BackOrderQty');
+    out.push({ ean:ean, item:item,
+      qty:/^\d+$/.test(qty)?parseInt(qty,10):0,
+      counted:txt(L,'DateCountedOn'),
+      incomingQty:/^\d+$/.test(boq)?parseInt(boq,10):null,
+      incomingDate:txt(L,'BackOrderDate')||null });
+  }
+  records=out;
+  if(out.length) meta.counted=out[0].counted;
+}
+
+/* ---- CSV parsing (item names; semicolon-separated, quoted fields) ---- */
+function parseCSV(text,delim){
+  if(text.charCodeAt(0)===0xFEFF) text=text.slice(1);   // strip BOM
+  var rows=[], row=[], field='', inQ=false, i=0, c;
+  while(i<text.length){
+    c=text[i];
+    if(inQ){
+      if(c==='"'){ if(text[i+1]==='"'){ field+='"'; i+=2; continue; } inQ=false; i++; continue; }
+      field+=c; i++; continue;
+    }
+    if(c==='"' && field===''){ inQ=true; i++; continue; }
+    if(c===delim){ row.push(field); field=''; i++; continue; }
+    if(c==='\r'){ i++; continue; }
+    if(c==='\n'){ row.push(field); rows.push(row); row=[]; field=''; i++; continue; }
+    field+=c; i++;
+  }
+  if(field!==''||row.length){ row.push(field); rows.push(row); }
+  return rows;
+}
+function buildNames(text){
+  var rows=parseCSV(text,';'), map={};
+  for(var i=1;i<rows.length;i++){                 // row 0 = header
+    var r=rows[i]; if(!r||r.length<7) continue;
+    var item=(r[1]||'').trim(); if(!item) continue;
+    map[item.toUpperCase()]={ da:(r[3]||'').trim(), sv:(r[4]||'').trim(), fi:(r[5]||'').trim(), en:(r[6]||'').trim() };
+  }
+  return map;
+}
+
+/* ---- loading ---- */
+function showLoader(msg,withButton){
+  loader.innerHTML='<div class="loadbox">'+esc(msg)+
+    (withButton?'<div><input id="filepick" type="file" accept=".xml" style="display:none"><button id="pickbtn">'+esc(tr('loadBtn'))+'</button></div>':'')+'</div>';
+  if(withButton){
+    var pick=document.getElementById('filepick'), btn=document.getElementById('pickbtn');
+    btn.addEventListener('click',function(){pick.click();});
+    pick.addEventListener('change',function(e){
+      var f=e.target.files[0]; if(!f) return;
+      var rd=new FileReader();
+      rd.onload=function(){ try{ parseXML(rd.result); loader.innerHTML=''; applyStaticText(); search(); }
+        catch(err){ showLoader(tr('loadFail'),true); } };
+      rd.readAsText(f);
+    });
+  }
+}
+function loadNames(){    // optional layer; failure is silent
+  fetch('item_names.csv',{cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw 0; return r.text(); })
+    .then(function(txt){ NAMES=buildNames(txt); if(q.value.trim()) search(); })
+    .catch(function(){ /* names simply won't show */ });
+}
+function loadStock(){
+  showLoader(tr('loading'),false);
+  fetch('stock.xml',{cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw new Error('http'); return r.text(); })
+    .then(function(txt){ parseXML(txt); loader.innerHTML=''; applyStaticText(); search(); })
+    .catch(function(){ showLoader(tr('loadFail'),true); });
+}
+
+/* ---- language ---- */
+function setLang(l,updateURL){
+  if(!T[l]) return;
+  lang=l;
+  var btns=document.getElementById('langs').querySelectorAll('button');
+  [].forEach.call(btns,function(x){ x.classList.toggle('on', x.getAttribute('data-lang')===l); });
+  document.documentElement.lang=l;
+  if(updateURL){
+    try{ var u=new URL(window.location); u.searchParams.set('lang',l); history.replaceState(null,'',u); }catch(e){}
+  }
+  applyStaticText();
+  if(loader.querySelector('.loadbox')) showLoader(records.length?tr('loading'):tr('loadFail'), !records.length);
+  search();
+}
+document.getElementById('langs').addEventListener('click',function(e){
+  var b=e.target.closest('button'); if(b) setLang(b.getAttribute('data-lang'), true);
+});
+
+/* pick up ?lang= from the address (e.g. distribute .../?lang=fi in Finland) */
+(function(){
+  var p; try{ p=new URL(window.location).searchParams.get('lang'); }catch(e){}
+  if(p && T[p.toLowerCase()]) lang=p.toLowerCase();
+})();
+
+var timer;
+q.addEventListener('input',function(){clearTimeout(timer);timer=setTimeout(search,90);});
+clearBtn.addEventListener('click',function(){q.value='';search();q.focus();});
+
+setLang(lang,false);
+loadStock();
+loadNames();
+q.focus();
+</script>
+</body>
+</html>
