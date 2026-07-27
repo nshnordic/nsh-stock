@@ -1,0 +1,20 @@
+name: List NSH folder (read-only)
+
+# This never runs on its own. You start it by hand from the Actions tab,
+# with the "Run workflow" button. It only lists the folder - it downloads,
+# changes and deletes nothing.
+on:
+  workflow_dispatch:
+
+jobs:
+  list:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Get the current files
+        uses: actions/checkout@v5
+
+      - name: List the NSH stock folder
+        env:
+          NSH_FTP_USER: ${{ secrets.NSH_FTP_USER }}
+          NSH_FTP_PASS: ${{ secrets.NSH_FTP_PASS }}
+        run: python3 list_stock.py
