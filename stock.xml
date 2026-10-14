@@ -2,10 +2,10 @@
 <NSHInventory>
   <Header>
     <VendorName>NSH NORDIC AS</VendorName>
-    <CreationDateTime>2026-10-14T07:00:21</CreationDateTime>
+    <CreationDateTime>2026-10-14T15:00:09</CreationDateTime>
     <VendorGLN>5790001088516</VendorGLN>
     <FeedType>FULL</FeedType>
-    <NoOfLines>4002</NoOfLines>
+    <NoOfLines>4009</NoOfLines>
   </Header>
   <Lines>
     <VendorProductID>
@@ -334,9 +334,9 @@
   <Lines>
     <VendorProductID>5705858723150</VendorProductID>
     <ProductBarcode>101-002PC</ProductBarcode>
-    <Quantity>5137</Quantity>
+    <Quantity>5313</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>2464</BackOrderQty>
+    <BackOrderQty>2288</BackOrderQty>
     <BackOrderDate>2026-09-21</BackOrderDate>
   </Lines>
   <Lines>
@@ -366,7 +366,7 @@
   <Lines>
     <VendorProductID>5705858723211</VendorProductID>
     <ProductBarcode>101-010PC</ProductBarcode>
-    <Quantity>2923</Quantity>
+    <Quantity>2635</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>576</BackOrderQty>
     <BackOrderDate>2027-03-05</BackOrderDate>
@@ -390,7 +390,7 @@
   <Lines>
     <VendorProductID>5705858723266</VendorProductID>
     <ProductBarcode>101-016PC</ProductBarcode>
-    <Quantity>1006</Quantity>
+    <Quantity>430</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>288</BackOrderQty>
     <BackOrderDate>2027-03-05</BackOrderDate>
@@ -454,7 +454,7 @@
   <Lines>
     <VendorProductID>5705858723426</VendorProductID>
     <ProductBarcode>101-038PC</ProductBarcode>
-    <Quantity>2284</Quantity>
+    <Quantity>2158</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -590,10 +590,10 @@
   <Lines>
     <VendorProductID>5705858723709</VendorProductID>
     <ProductBarcode>101-064PC</ProductBarcode>
-    <Quantity>975</Quantity>
+    <Quantity>1407</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>108</BackOrderQty>
-    <BackOrderDate>2026-11-11</BackOrderDate>
+    <BackOrderDate>2026-12-25</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>5705858723716</VendorProductID>
@@ -622,10 +622,10 @@
   <Lines>
     <VendorProductID>5705858723747</VendorProductID>
     <ProductBarcode>101-071PC</ProductBarcode>
-    <Quantity>16</Quantity>
+    <Quantity>0</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty />
-    <BackOrderDate />
+    <BackOrderQty>21</BackOrderQty>
+    <BackOrderDate>2026-12-02</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>5705858723754</VendorProductID>
@@ -766,7 +766,7 @@
   <Lines>
     <VendorProductID>5707266001202</VendorProductID>
     <ProductBarcode>101-131</ProductBarcode>
-    <Quantity>228</Quantity>
+    <Quantity>204</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -774,7 +774,7 @@
   <Lines>
     <VendorProductID>5707266001301</VendorProductID>
     <ProductBarcode>101-132</ProductBarcode>
-    <Quantity>379</Quantity>
+    <Quantity>369</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -782,7 +782,7 @@
   <Lines>
     <VendorProductID>5707266001400</VendorProductID>
     <ProductBarcode>101-133</ProductBarcode>
-    <Quantity>339</Quantity>
+    <Quantity>330</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -902,7 +902,7 @@
   <Lines>
     <VendorProductID>5705858028002</VendorProductID>
     <ProductBarcode>101-160</ProductBarcode>
-    <Quantity>425</Quantity>
+    <Quantity>417</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>1750</BackOrderQty>
     <BackOrderDate>2027-01-14</BackOrderDate>
@@ -968,7 +968,7 @@
     <ProductBarcode>101-174</ProductBarcode>
     <Quantity>0</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>2440</BackOrderQty>
+    <BackOrderQty>2550</BackOrderQty>
     <BackOrderDate>2026-11-06</BackOrderDate>
   </Lines>
   <Lines>
@@ -984,7 +984,7 @@
     <ProductBarcode>101-176</ProductBarcode>
     <Quantity>0</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>2506</BackOrderQty>
+    <BackOrderQty>2486</BackOrderQty>
     <BackOrderDate>2026-11-03</BackOrderDate>
   </Lines>
   <Lines>
@@ -1086,7 +1086,7 @@
   <Lines>
     <VendorProductID>5705858014074</VendorProductID>
     <ProductBarcode>101-193</ProductBarcode>
-    <Quantity>4667</Quantity>
+    <Quantity>4647</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>2700</BackOrderQty>
     <BackOrderDate>2026-11-03</BackOrderDate>
@@ -1536,7 +1536,7 @@
   <Lines>
     <VendorProductID>5705858724089</VendorProductID>
     <ProductBarcode>101-670PC</ProductBarcode>
-    <Quantity>350</Quantity>
+    <Quantity>165</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>270</BackOrderQty>
     <BackOrderDate>2026-12-24</BackOrderDate>
@@ -1552,7 +1552,7 @@
   <Lines>
     <VendorProductID>5705858724102</VendorProductID>
     <ProductBarcode>101-672PC</ProductBarcode>
-    <Quantity>46</Quantity>
+    <Quantity>34</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -1560,7 +1560,7 @@
   <Lines>
     <VendorProductID>5705858724119</VendorProductID>
     <ProductBarcode>101-677PC</ProductBarcode>
-    <Quantity>18</Quantity>
+    <Quantity>16</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>50</BackOrderQty>
     <BackOrderDate>2027-05-07</BackOrderDate>
@@ -1568,7 +1568,7 @@
   <Lines>
     <VendorProductID>5705858724126</VendorProductID>
     <ProductBarcode>101-678PC</ProductBarcode>
-    <Quantity>120</Quantity>
+    <Quantity>116</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>100</BackOrderQty>
     <BackOrderDate>2027-05-07</BackOrderDate>
@@ -1584,7 +1584,7 @@
   <Lines>
     <VendorProductID>5705858086996</VendorProductID>
     <ProductBarcode>101-684</ProductBarcode>
-    <Quantity>21</Quantity>
+    <Quantity>10</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>17</BackOrderQty>
     <BackOrderDate>2026-12-24</BackOrderDate>
@@ -1592,15 +1592,15 @@
   <Lines>
     <VendorProductID>5705858708942</VendorProductID>
     <ProductBarcode>101-685</ProductBarcode>
-    <Quantity>7</Quantity>
+    <Quantity>3</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>5</BackOrderQty>
+    <BackOrderQty>6</BackOrderQty>
     <BackOrderDate>2026-12-24</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>5705858708959</VendorProductID>
     <ProductBarcode>101-686</ProductBarcode>
-    <Quantity>5</Quantity>
+    <Quantity>2</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>4</BackOrderQty>
     <BackOrderDate>2026-12-24</BackOrderDate>
@@ -1608,7 +1608,7 @@
   <Lines>
     <VendorProductID>5705858708966</VendorProductID>
     <ProductBarcode>101-687</ProductBarcode>
-    <Quantity>4</Quantity>
+    <Quantity>2</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>3</BackOrderQty>
     <BackOrderDate>2026-12-24</BackOrderDate>
@@ -1616,7 +1616,7 @@
   <Lines>
     <VendorProductID>5705858708973</VendorProductID>
     <ProductBarcode>101-688</ProductBarcode>
-    <Quantity>21</Quantity>
+    <Quantity>10</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>17</BackOrderQty>
     <BackOrderDate>2026-12-24</BackOrderDate>
@@ -1624,15 +1624,15 @@
   <Lines>
     <VendorProductID>5705858708980</VendorProductID>
     <ProductBarcode>101-689</ProductBarcode>
-    <Quantity>7</Quantity>
+    <Quantity>3</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>5</BackOrderQty>
+    <BackOrderQty>6</BackOrderQty>
     <BackOrderDate>2026-12-24</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>5705858708997</VendorProductID>
     <ProductBarcode>101-690</ProductBarcode>
-    <Quantity>5</Quantity>
+    <Quantity>2</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>4</BackOrderQty>
     <BackOrderDate>2026-12-24</BackOrderDate>
@@ -1640,7 +1640,7 @@
   <Lines>
     <VendorProductID>5705858709000</VendorProductID>
     <ProductBarcode>101-691</ProductBarcode>
-    <Quantity>4</Quantity>
+    <Quantity>2</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>3</BackOrderQty>
     <BackOrderDate>2026-12-24</BackOrderDate>
@@ -1648,7 +1648,7 @@
   <Lines>
     <VendorProductID>5705858709017</VendorProductID>
     <ProductBarcode>101-692</ProductBarcode>
-    <Quantity>22</Quantity>
+    <Quantity>11</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>16</BackOrderQty>
     <BackOrderDate>2026-12-24</BackOrderDate>
@@ -1656,7 +1656,7 @@
   <Lines>
     <VendorProductID>5705858082387</VendorProductID>
     <ProductBarcode>101-693</ProductBarcode>
-    <Quantity>21</Quantity>
+    <Quantity>10</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>17</BackOrderQty>
     <BackOrderDate>2026-12-24</BackOrderDate>
@@ -1736,9 +1736,9 @@
   <Lines>
     <VendorProductID>5705858077260</VendorProductID>
     <ProductBarcode>101-920PC</ProductBarcode>
-    <Quantity>225</Quantity>
+    <Quantity>465</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>336</BackOrderQty>
+    <BackOrderQty>96</BackOrderQty>
     <BackOrderDate>2026-11-11</BackOrderDate>
   </Lines>
   <Lines>
@@ -2056,7 +2056,7 @@
   <Lines>
     <VendorProductID>5705858066448</VendorProductID>
     <ProductBarcode>102-090</ProductBarcode>
-    <Quantity>1448</Quantity>
+    <Quantity>1443</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>1216</BackOrderQty>
     <BackOrderDate>2027-01-22</BackOrderDate>
@@ -2064,7 +2064,7 @@
   <Lines>
     <VendorProductID>5705858066455</VendorProductID>
     <ProductBarcode>102-091</ProductBarcode>
-    <Quantity>1148</Quantity>
+    <Quantity>1147</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>450</BackOrderQty>
     <BackOrderDate>2026-11-13</BackOrderDate>
@@ -2144,7 +2144,7 @@
   <Lines>
     <VendorProductID>5705858028033</VendorProductID>
     <ProductBarcode>102-163</ProductBarcode>
-    <Quantity>9310</Quantity>
+    <Quantity>9285</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>9500</BackOrderQty>
     <BackOrderDate>2026-11-13</BackOrderDate>
@@ -2168,7 +2168,7 @@
   <Lines>
     <VendorProductID>5705858066486</VendorProductID>
     <ProductBarcode>102-173</ProductBarcode>
-    <Quantity>372</Quantity>
+    <Quantity>371</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>380</BackOrderQty>
     <BackOrderDate>2026-11-13</BackOrderDate>
@@ -2186,7 +2186,7 @@
     <ProductBarcode>102-190</ProductBarcode>
     <Quantity>0</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>13600</BackOrderQty>
+    <BackOrderQty>13350</BackOrderQty>
     <BackOrderDate>2026-11-06</BackOrderDate>
   </Lines>
   <Lines>
@@ -2232,7 +2232,7 @@
   <Lines>
     <VendorProductID>5705858022512</VendorProductID>
     <ProductBarcode>103-072</ProductBarcode>
-    <Quantity>57</Quantity>
+    <Quantity>56</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -2322,7 +2322,7 @@
     <ProductBarcode>103-105</ProductBarcode>
     <Quantity>0</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>15</BackOrderQty>
+    <BackOrderQty>10</BackOrderQty>
     <BackOrderDate>2026-10-29</BackOrderDate>
   </Lines>
   <Lines>
@@ -2360,7 +2360,7 @@
   <Lines>
     <VendorProductID>5705858021911</VendorProductID>
     <ProductBarcode>103-117</ProductBarcode>
-    <Quantity>487</Quantity>
+    <Quantity>481</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -2368,7 +2368,7 @@
   <Lines>
     <VendorProductID>5705858003573</VendorProductID>
     <ProductBarcode>103-118</ProductBarcode>
-    <Quantity>415</Quantity>
+    <Quantity>414</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -2448,18 +2448,18 @@
   <Lines>
     <VendorProductID>5705858087474</VendorProductID>
     <ProductBarcode>103-144PC</ProductBarcode>
-    <Quantity>0</Quantity>
+    <Quantity>25</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>25</BackOrderQty>
-    <BackOrderDate>2026-10-27</BackOrderDate>
+    <BackOrderQty>10</BackOrderQty>
+    <BackOrderDate>2026-11-11</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>5705858087481</VendorProductID>
     <ProductBarcode>103-146PC</ProductBarcode>
-    <Quantity>0</Quantity>
+    <Quantity>20</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>20</BackOrderQty>
-    <BackOrderDate>2026-10-27</BackOrderDate>
+    <BackOrderQty />
+    <BackOrderDate />
   </Lines>
   <Lines>
     <VendorProductID>5705858087498</VendorProductID>
@@ -2480,7 +2480,7 @@
   <Lines>
     <VendorProductID>5705858702339</VendorProductID>
     <ProductBarcode>103-187</ProductBarcode>
-    <Quantity>370</Quantity>
+    <Quantity>368</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -2552,7 +2552,7 @@
   <Lines>
     <VendorProductID>9414884365833</VendorProductID>
     <ProductBarcode>103-210</ProductBarcode>
-    <Quantity>3532</Quantity>
+    <Quantity>3492</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -2560,7 +2560,7 @@
   <Lines>
     <VendorProductID>9414884365826</VendorProductID>
     <ProductBarcode>103-212</ProductBarcode>
-    <Quantity>768</Quantity>
+    <Quantity>668</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -2632,7 +2632,7 @@
   <Lines>
     <VendorProductID>5705858709260</VendorProductID>
     <ProductBarcode>104-115</ProductBarcode>
-    <Quantity>1483</Quantity>
+    <Quantity>1474</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>640</BackOrderQty>
     <BackOrderDate>2026-11-03</BackOrderDate>
@@ -2672,7 +2672,7 @@
   <Lines>
     <VendorProductID>9414731440539</VendorProductID>
     <ProductBarcode>104-136</ProductBarcode>
-    <Quantity>10397</Quantity>
+    <Quantity>10372</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -2776,7 +2776,7 @@
   <Lines>
     <VendorProductID>5705858700144</VendorProductID>
     <ProductBarcode>104-511</ProductBarcode>
-    <Quantity>797</Quantity>
+    <Quantity>790</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>600</BackOrderQty>
     <BackOrderDate>2026-11-03</BackOrderDate>
@@ -2840,7 +2840,7 @@
   <Lines>
     <VendorProductID>5705858007397</VendorProductID>
     <ProductBarcode>104-900</ProductBarcode>
-    <Quantity>1201</Quantity>
+    <Quantity>1196</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>880</BackOrderQty>
     <BackOrderDate>2026-11-03</BackOrderDate>
@@ -2848,7 +2848,7 @@
   <Lines>
     <VendorProductID>5705858009582</VendorProductID>
     <ProductBarcode>104-901</ProductBarcode>
-    <Quantity>380</Quantity>
+    <Quantity>379</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>300</BackOrderQty>
     <BackOrderDate>2026-11-03</BackOrderDate>
@@ -2888,7 +2888,7 @@
   <Lines>
     <VendorProductID>4032922031141</VendorProductID>
     <ProductBarcode>105-121</ProductBarcode>
-    <Quantity>81</Quantity>
+    <Quantity>77</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -2936,7 +2936,7 @@
   <Lines>
     <VendorProductID>5705858700175</VendorProductID>
     <ProductBarcode>105-209</ProductBarcode>
-    <Quantity>1373</Quantity>
+    <Quantity>1254</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -2944,7 +2944,7 @@
   <Lines>
     <VendorProductID>5705858008691</VendorProductID>
     <ProductBarcode>105-210</ProductBarcode>
-    <Quantity>958</Quantity>
+    <Quantity>954</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -2952,7 +2952,7 @@
   <Lines>
     <VendorProductID>5705858008707</VendorProductID>
     <ProductBarcode>105-211</ProductBarcode>
-    <Quantity>530</Quantity>
+    <Quantity>523</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -2960,7 +2960,7 @@
   <Lines>
     <VendorProductID>5705858008714</VendorProductID>
     <ProductBarcode>105-219</ProductBarcode>
-    <Quantity>1512</Quantity>
+    <Quantity>1510</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -2968,7 +2968,7 @@
   <Lines>
     <VendorProductID>5705858702391</VendorProductID>
     <ProductBarcode>105-220</ProductBarcode>
-    <Quantity>1841</Quantity>
+    <Quantity>1836</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -3048,7 +3048,7 @@
   <Lines>
     <VendorProductID>5705858007250</VendorProductID>
     <ProductBarcode>106-028</ProductBarcode>
-    <Quantity>697</Quantity>
+    <Quantity>695</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -3064,7 +3064,7 @@
   <Lines>
     <VendorProductID>5705858007021</VendorProductID>
     <ProductBarcode>106-030</ProductBarcode>
-    <Quantity>448</Quantity>
+    <Quantity>442</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -3080,7 +3080,7 @@
   <Lines>
     <VendorProductID>5705858005973</VendorProductID>
     <ProductBarcode>106-032</ProductBarcode>
-    <Quantity>513</Quantity>
+    <Quantity>512</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>170</BackOrderQty>
     <BackOrderDate>2026-11-06</BackOrderDate>
@@ -3348,7 +3348,7 @@
   <Lines>
     <VendorProductID>5705858013497</VendorProductID>
     <ProductBarcode>106-113</ProductBarcode>
-    <Quantity>58</Quantity>
+    <Quantity>51</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>36</BackOrderQty>
     <BackOrderDate>2026-12-24</BackOrderDate>
@@ -3488,7 +3488,7 @@
   <Lines>
     <VendorProductID>5705858000725</VendorProductID>
     <ProductBarcode>106-200</ProductBarcode>
-    <Quantity>93</Quantity>
+    <Quantity>92</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -3544,7 +3544,7 @@
   <Lines>
     <VendorProductID>5705858000770</VendorProductID>
     <ProductBarcode>106-208</ProductBarcode>
-    <Quantity>160</Quantity>
+    <Quantity>156</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -3608,7 +3608,7 @@
   <Lines>
     <VendorProductID>5705858023854</VendorProductID>
     <ProductBarcode>106-227</ProductBarcode>
-    <Quantity>160</Quantity>
+    <Quantity>159</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -3656,7 +3656,7 @@
   <Lines>
     <VendorProductID>5705858000923</VendorProductID>
     <ProductBarcode>106-234</ProductBarcode>
-    <Quantity>444</Quantity>
+    <Quantity>443</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -3664,7 +3664,7 @@
   <Lines>
     <VendorProductID>5705858000091</VendorProductID>
     <ProductBarcode>106-235</ProductBarcode>
-    <Quantity>411</Quantity>
+    <Quantity>409</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>212</BackOrderQty>
     <BackOrderDate>2027-01-14</BackOrderDate>
@@ -3712,7 +3712,7 @@
   <Lines>
     <VendorProductID>5705858007007</VendorProductID>
     <ProductBarcode>106-288</ProductBarcode>
-    <Quantity>36204</Quantity>
+    <Quantity>36079</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>30400</BackOrderQty>
     <BackOrderDate>2027-01-22</BackOrderDate>
@@ -3720,7 +3720,7 @@
   <Lines>
     <VendorProductID>5705858007014</VendorProductID>
     <ProductBarcode>106-289</ProductBarcode>
-    <Quantity>11482</Quantity>
+    <Quantity>11472</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>4500</BackOrderQty>
     <BackOrderDate>2026-11-13</BackOrderDate>
@@ -3784,7 +3784,7 @@
   <Lines>
     <VendorProductID>5705858042053</VendorProductID>
     <ProductBarcode>106-313</ProductBarcode>
-    <Quantity>21</Quantity>
+    <Quantity>20</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>36</BackOrderQty>
     <BackOrderDate>2026-11-06</BackOrderDate>
@@ -3912,7 +3912,7 @@
   <Lines>
     <VendorProductID>5705858038643</VendorProductID>
     <ProductBarcode>106-393</ProductBarcode>
-    <Quantity>172</Quantity>
+    <Quantity>171</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>624</BackOrderQty>
     <BackOrderDate>2026-11-13</BackOrderDate>
@@ -3920,7 +3920,7 @@
   <Lines>
     <VendorProductID>5705858016009</VendorProductID>
     <ProductBarcode>106-394</ProductBarcode>
-    <Quantity>44</Quantity>
+    <Quantity>43</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>192</BackOrderQty>
     <BackOrderDate>2026-11-06</BackOrderDate>
@@ -3928,7 +3928,7 @@
   <Lines>
     <VendorProductID>5705858023878</VendorProductID>
     <ProductBarcode>106-395</ProductBarcode>
-    <Quantity>150</Quantity>
+    <Quantity>148</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>144</BackOrderQty>
     <BackOrderDate>2026-11-03</BackOrderDate>
@@ -4104,7 +4104,7 @@
   <Lines>
     <VendorProductID>5705858006192</VendorProductID>
     <ProductBarcode>106-444</ProductBarcode>
-    <Quantity>59</Quantity>
+    <Quantity>54</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>319</BackOrderQty>
     <BackOrderDate>2026-11-13</BackOrderDate>
@@ -4112,7 +4112,7 @@
   <Lines>
     <VendorProductID>5705858012872</VendorProductID>
     <ProductBarcode>106-460</ProductBarcode>
-    <Quantity>2246</Quantity>
+    <Quantity>2245</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>475</BackOrderQty>
     <BackOrderDate>2026-11-03</BackOrderDate>
@@ -4200,7 +4200,7 @@
   <Lines>
     <VendorProductID>5705858014043</VendorProductID>
     <ProductBarcode>106-490</ProductBarcode>
-    <Quantity>277</Quantity>
+    <Quantity>273</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>150</BackOrderQty>
     <BackOrderDate>2026-11-06</BackOrderDate>
@@ -4312,7 +4312,7 @@
   <Lines>
     <VendorProductID>5705858007281</VendorProductID>
     <ProductBarcode>106-798</ProductBarcode>
-    <Quantity>674</Quantity>
+    <Quantity>667</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>648</BackOrderQty>
     <BackOrderDate>2026-11-06</BackOrderDate>
@@ -4322,7 +4322,7 @@
     <ProductBarcode>106-799</ProductBarcode>
     <Quantity>0</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>1381</BackOrderQty>
+    <BackOrderQty>1401</BackOrderQty>
     <BackOrderDate>2026-11-03</BackOrderDate>
   </Lines>
   <Lines>
@@ -4392,7 +4392,7 @@
   <Lines>
     <VendorProductID>5705858006987</VendorProductID>
     <ProductBarcode>106-810</ProductBarcode>
-    <Quantity>10</Quantity>
+    <Quantity>9</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -4584,7 +4584,7 @@
   <Lines>
     <VendorProductID>5705858000497</VendorProductID>
     <ProductBarcode>106-871</ProductBarcode>
-    <Quantity>71</Quantity>
+    <Quantity>70</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>180</BackOrderQty>
     <BackOrderDate>2026-11-06</BackOrderDate>
@@ -4650,7 +4650,7 @@
   <Lines>
     <VendorProductID>5705858711515</VendorProductID>
     <ProductBarcode>106-879</ProductBarcode>
-    <Quantity>226</Quantity>
+    <Quantity>225</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>672</BackOrderQty>
     <BackOrderDate>2026-11-06</BackOrderDate>
@@ -4658,7 +4658,7 @@
   <Lines>
     <VendorProductID>5705858000183</VendorProductID>
     <ProductBarcode>106-880</ProductBarcode>
-    <Quantity>351</Quantity>
+    <Quantity>350</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>600</BackOrderQty>
     <BackOrderDate>2027-01-14</BackOrderDate>
@@ -4862,7 +4862,7 @@
   <Lines>
     <VendorProductID>5705858021010</VendorProductID>
     <ProductBarcode>107-630</ProductBarcode>
-    <Quantity>218</Quantity>
+    <Quantity>217</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -5494,7 +5494,7 @@
   <Lines>
     <VendorProductID>5705858728094</VendorProductID>
     <ProductBarcode>111-427</ProductBarcode>
-    <Quantity>36</Quantity>
+    <Quantity>34</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>64</BackOrderQty>
     <BackOrderDate>2026-11-06</BackOrderDate>
@@ -5846,7 +5846,7 @@
   <Lines>
     <VendorProductID>5705858078915</VendorProductID>
     <ProductBarcode>115-014</ProductBarcode>
-    <Quantity>15</Quantity>
+    <Quantity>14</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>70</BackOrderQty>
     <BackOrderDate>2027-03-05</BackOrderDate>
@@ -7222,10 +7222,10 @@
   <Lines>
     <VendorProductID>5705858728315</VendorProductID>
     <ProductBarcode>116-074PC</ProductBarcode>
-    <Quantity>0</Quantity>
+    <Quantity>48</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>48</BackOrderQty>
-    <BackOrderDate>2026-11-11</BackOrderDate>
+    <BackOrderDate>2027-03-05</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>5705858068893</VendorProductID>
@@ -10064,122 +10064,122 @@
   <Lines>
     <VendorProductID>5705858081069</VendorProductID>
     <ProductBarcode>208-008</ProductBarcode>
-    <Quantity>0</Quantity>
+    <Quantity>2400</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>2400</BackOrderQty>
-    <BackOrderDate>2026-10-22</BackOrderDate>
+    <BackOrderQty />
+    <BackOrderDate />
   </Lines>
   <Lines>
     <VendorProductID>5705858081076</VendorProductID>
     <ProductBarcode>208-009</ProductBarcode>
-    <Quantity>456</Quantity>
+    <Quantity>1656</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>1200</BackOrderQty>
-    <BackOrderDate>2026-10-22</BackOrderDate>
+    <BackOrderQty />
+    <BackOrderDate />
   </Lines>
   <Lines>
     <VendorProductID>5705858081083</VendorProductID>
     <ProductBarcode>208-010</ProductBarcode>
-    <Quantity>752</Quantity>
+    <Quantity>1548</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>800</BackOrderQty>
-    <BackOrderDate>2026-10-22</BackOrderDate>
+    <BackOrderQty />
+    <BackOrderDate />
   </Lines>
   <Lines>
     <VendorProductID>5705858081090</VendorProductID>
     <ProductBarcode>208-011</ProductBarcode>
-    <Quantity>270</Quantity>
+    <Quantity>990</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>720</BackOrderQty>
-    <BackOrderDate>2026-10-22</BackOrderDate>
+    <BackOrderQty />
+    <BackOrderDate />
   </Lines>
   <Lines>
     <VendorProductID>5705858081106</VendorProductID>
     <ProductBarcode>208-012</ProductBarcode>
-    <Quantity>80</Quantity>
+    <Quantity>880</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>800</BackOrderQty>
-    <BackOrderDate>2026-10-22</BackOrderDate>
+    <BackOrderQty />
+    <BackOrderDate />
   </Lines>
   <Lines>
     <VendorProductID>5705858081113</VendorProductID>
     <ProductBarcode>208-013</ProductBarcode>
-    <Quantity>0</Quantity>
+    <Quantity>2400</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>2400</BackOrderQty>
-    <BackOrderDate>2026-10-22</BackOrderDate>
+    <BackOrderQty />
+    <BackOrderDate />
   </Lines>
   <Lines>
     <VendorProductID>5705858081120</VendorProductID>
     <ProductBarcode>208-014</ProductBarcode>
-    <Quantity>492</Quantity>
+    <Quantity>1692</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>1200</BackOrderQty>
-    <BackOrderDate>2026-10-22</BackOrderDate>
+    <BackOrderQty />
+    <BackOrderDate />
   </Lines>
   <Lines>
     <VendorProductID>5705858081137</VendorProductID>
     <ProductBarcode>208-015</ProductBarcode>
-    <Quantity>704</Quantity>
+    <Quantity>1504</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>800</BackOrderQty>
-    <BackOrderDate>2026-10-22</BackOrderDate>
+    <BackOrderQty />
+    <BackOrderDate />
   </Lines>
   <Lines>
     <VendorProductID>5705858081144</VendorProductID>
     <ProductBarcode>208-016</ProductBarcode>
-    <Quantity>234</Quantity>
+    <Quantity>954</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>720</BackOrderQty>
-    <BackOrderDate>2026-10-22</BackOrderDate>
+    <BackOrderQty />
+    <BackOrderDate />
   </Lines>
   <Lines>
     <VendorProductID>5705858081151</VendorProductID>
     <ProductBarcode>208-017</ProductBarcode>
-    <Quantity>110</Quantity>
+    <Quantity>910</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>800</BackOrderQty>
-    <BackOrderDate>2026-10-22</BackOrderDate>
+    <BackOrderQty />
+    <BackOrderDate />
   </Lines>
   <Lines>
     <VendorProductID>5705858081168</VendorProductID>
     <ProductBarcode>208-018</ProductBarcode>
-    <Quantity>47</Quantity>
+    <Quantity>2447</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>2400</BackOrderQty>
-    <BackOrderDate>2026-10-22</BackOrderDate>
+    <BackOrderQty />
+    <BackOrderDate />
   </Lines>
   <Lines>
     <VendorProductID>5705858081175</VendorProductID>
     <ProductBarcode>208-019</ProductBarcode>
-    <Quantity>564</Quantity>
+    <Quantity>1764</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>1200</BackOrderQty>
-    <BackOrderDate>2026-10-22</BackOrderDate>
+    <BackOrderQty />
+    <BackOrderDate />
   </Lines>
   <Lines>
     <VendorProductID>5705858081182</VendorProductID>
     <ProductBarcode>208-020</ProductBarcode>
-    <Quantity>808</Quantity>
+    <Quantity>1608</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>800</BackOrderQty>
-    <BackOrderDate>2026-10-22</BackOrderDate>
+    <BackOrderQty />
+    <BackOrderDate />
   </Lines>
   <Lines>
     <VendorProductID>5705858081199</VendorProductID>
     <ProductBarcode>208-021</ProductBarcode>
-    <Quantity>395</Quantity>
+    <Quantity>1115</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>720</BackOrderQty>
-    <BackOrderDate>2026-10-22</BackOrderDate>
+    <BackOrderQty />
+    <BackOrderDate />
   </Lines>
   <Lines>
     <VendorProductID>5705858081205</VendorProductID>
     <ProductBarcode>208-022</ProductBarcode>
-    <Quantity>328</Quantity>
+    <Quantity>1128</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>800</BackOrderQty>
-    <BackOrderDate>2026-10-22</BackOrderDate>
+    <BackOrderQty />
+    <BackOrderDate />
   </Lines>
   <Lines>
     <VendorProductID>8711355819019</VendorProductID>
@@ -11256,9 +11256,9 @@
   <Lines>
     <VendorProductID>5705858704746</VendorProductID>
     <ProductBarcode>210-134</ProductBarcode>
-    <Quantity>194</Quantity>
+    <Quantity>192</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>201</BackOrderQty>
+    <BackOrderQty>200</BackOrderQty>
     <BackOrderDate>2026-11-06</BackOrderDate>
   </Lines>
   <Lines>
@@ -11274,7 +11274,7 @@
     <ProductBarcode>210-531</ProductBarcode>
     <Quantity>0</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>518</BackOrderQty>
+    <BackOrderQty>528</BackOrderQty>
     <BackOrderDate>2026-11-03</BackOrderDate>
   </Lines>
   <Lines>
@@ -11536,7 +11536,7 @@
   <Lines>
     <VendorProductID>5705858054063</VendorProductID>
     <ProductBarcode>210-942</ProductBarcode>
-    <Quantity>207</Quantity>
+    <Quantity>206</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>126</BackOrderQty>
     <BackOrderDate>2027-01-29</BackOrderDate>
@@ -11560,7 +11560,7 @@
   <Lines>
     <VendorProductID>5705858056241</VendorProductID>
     <ProductBarcode>210-950</ProductBarcode>
-    <Quantity>925</Quantity>
+    <Quantity>924</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -11792,7 +11792,7 @@
   <Lines>
     <VendorProductID>5705858066257</VendorProductID>
     <ProductBarcode>211-362</ProductBarcode>
-    <Quantity>117</Quantity>
+    <Quantity>112</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -12072,7 +12072,7 @@
   <Lines>
     <VendorProductID>5705858080628</VendorProductID>
     <ProductBarcode>211-588</ProductBarcode>
-    <Quantity>251</Quantity>
+    <Quantity>250</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -12080,7 +12080,7 @@
   <Lines>
     <VendorProductID>5705858080642</VendorProductID>
     <ProductBarcode>211-589</ProductBarcode>
-    <Quantity>502</Quantity>
+    <Quantity>500</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -12120,18 +12120,18 @@
   <Lines>
     <VendorProductID>5705858080420</VendorProductID>
     <ProductBarcode>211-598</ProductBarcode>
-    <Quantity>0</Quantity>
+    <Quantity>24</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>24</BackOrderQty>
-    <BackOrderDate>2026-11-11</BackOrderDate>
+    <BackOrderDate>2027-03-05</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>5705858080437</VendorProductID>
     <ProductBarcode>211-599</ProductBarcode>
-    <Quantity>0</Quantity>
+    <Quantity>48</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>48</BackOrderQty>
-    <BackOrderDate>2026-11-11</BackOrderDate>
+    <BackOrderDate>2027-03-05</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>5705858081274</VendorProductID>
@@ -12160,7 +12160,7 @@
   <Lines>
     <VendorProductID>5705858073736</VendorProductID>
     <ProductBarcode>211-629</ProductBarcode>
-    <Quantity>9907</Quantity>
+    <Quantity>9900</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -12184,7 +12184,7 @@
   <Lines>
     <VendorProductID>5705858073668</VendorProductID>
     <ProductBarcode>211-632</ProductBarcode>
-    <Quantity>502</Quantity>
+    <Quantity>500</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -12192,7 +12192,7 @@
   <Lines>
     <VendorProductID>5705858073682</VendorProductID>
     <ProductBarcode>211-633</ProductBarcode>
-    <Quantity>1005</Quantity>
+    <Quantity>1004</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -12224,7 +12224,7 @@
   <Lines>
     <VendorProductID>5705858073651</VendorProductID>
     <ProductBarcode>211-637</ProductBarcode>
-    <Quantity>771</Quantity>
+    <Quantity>769</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -12304,7 +12304,7 @@
   <Lines>
     <VendorProductID>5705858718996</VendorProductID>
     <ProductBarcode>211-651</ProductBarcode>
-    <Quantity>4869</Quantity>
+    <Quantity>4677</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>1176</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
@@ -12328,15 +12328,15 @@
   <Lines>
     <VendorProductID>5705858719320</VendorProductID>
     <ProductBarcode>211-654</ProductBarcode>
-    <Quantity>486</Quantity>
+    <Quantity>467</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>44</BackOrderQty>
+    <BackOrderQty>63</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>5705858719337</VendorProductID>
     <ProductBarcode>211-655</ProductBarcode>
-    <Quantity>243</Quantity>
+    <Quantity>233</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>59</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
@@ -12344,15 +12344,15 @@
   <Lines>
     <VendorProductID>5705858719344</VendorProductID>
     <ProductBarcode>211-656</ProductBarcode>
-    <Quantity>162</Quantity>
+    <Quantity>155</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>39</BackOrderQty>
+    <BackOrderQty>40</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>5705858719351</VendorProductID>
     <ProductBarcode>211-657</ProductBarcode>
-    <Quantity>486</Quantity>
+    <Quantity>467</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>118</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
@@ -12360,7 +12360,7 @@
   <Lines>
     <VendorProductID>5705858719368</VendorProductID>
     <ProductBarcode>211-658</ProductBarcode>
-    <Quantity>405</Quantity>
+    <Quantity>389</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>98</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
@@ -12368,7 +12368,7 @@
   <Lines>
     <VendorProductID>5705858719375</VendorProductID>
     <ProductBarcode>211-659</ProductBarcode>
-    <Quantity>202</Quantity>
+    <Quantity>194</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>49</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
@@ -12376,15 +12376,15 @@
   <Lines>
     <VendorProductID>5705858719382</VendorProductID>
     <ProductBarcode>211-660</ProductBarcode>
-    <Quantity>135</Quantity>
+    <Quantity>129</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>32</BackOrderQty>
+    <BackOrderQty>33</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>5705858719399</VendorProductID>
     <ProductBarcode>211-661</ProductBarcode>
-    <Quantity>405</Quantity>
+    <Quantity>389</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>98</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
@@ -12464,25 +12464,25 @@
   <Lines>
     <VendorProductID>5705858720074</VendorProductID>
     <ProductBarcode>211-671</ProductBarcode>
-    <Quantity>304</Quantity>
+    <Quantity>292</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>49</BackOrderQty>
+    <BackOrderQty>61</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>5705858720081</VendorProductID>
     <ProductBarcode>211-672</ProductBarcode>
-    <Quantity>202</Quantity>
+    <Quantity>194</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>33</BackOrderQty>
+    <BackOrderQty>41</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>5705858720098</VendorProductID>
     <ProductBarcode>211-673</ProductBarcode>
-    <Quantity>608</Quantity>
+    <Quantity>584</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>98</BackOrderQty>
+    <BackOrderQty>122</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
   </Lines>
   <Lines>
@@ -12520,17 +12520,17 @@
   <Lines>
     <VendorProductID>5705858720548</VendorProductID>
     <ProductBarcode>211-690</ProductBarcode>
-    <Quantity>81</Quantity>
+    <Quantity>77</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>19</BackOrderQty>
+    <BackOrderQty>20</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>5705858720555</VendorProductID>
     <ProductBarcode>211-691</ProductBarcode>
-    <Quantity>67</Quantity>
+    <Quantity>64</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>16</BackOrderQty>
+    <BackOrderQty>17</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
   </Lines>
   <Lines>
@@ -12552,9 +12552,9 @@
   <Lines>
     <VendorProductID>5705858720586</VendorProductID>
     <ProductBarcode>211-696</ProductBarcode>
-    <Quantity>101</Quantity>
+    <Quantity>97</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>16</BackOrderQty>
+    <BackOrderQty>20</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
   </Lines>
   <Lines>
@@ -12616,23 +12616,23 @@
   <Lines>
     <VendorProductID>5705858078205</VendorProductID>
     <ProductBarcode>211-721</ProductBarcode>
-    <Quantity>608</Quantity>
+    <Quantity>584</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>98</BackOrderQty>
+    <BackOrderQty>122</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>5705858078236</VendorProductID>
     <ProductBarcode>211-722</ProductBarcode>
-    <Quantity>486</Quantity>
+    <Quantity>467</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>44</BackOrderQty>
+    <BackOrderQty>63</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>5705858078250</VendorProductID>
     <ProductBarcode>211-723</ProductBarcode>
-    <Quantity>486</Quantity>
+    <Quantity>467</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>118</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
@@ -12640,7 +12640,7 @@
   <Lines>
     <VendorProductID>5705858078182</VendorProductID>
     <ProductBarcode>211-724</ProductBarcode>
-    <Quantity>405</Quantity>
+    <Quantity>389</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>98</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
@@ -12648,7 +12648,7 @@
   <Lines>
     <VendorProductID>5705858078212</VendorProductID>
     <ProductBarcode>211-725</ProductBarcode>
-    <Quantity>405</Quantity>
+    <Quantity>389</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>98</BackOrderQty>
     <BackOrderDate>2027-03-26</BackOrderDate>
@@ -12720,7 +12720,7 @@
   <Lines>
     <VendorProductID>5705858061214</VendorProductID>
     <ProductBarcode>211-812</ProductBarcode>
-    <Quantity>578</Quantity>
+    <Quantity>573</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>1296</BackOrderQty>
     <BackOrderDate>2027-03-05</BackOrderDate>
@@ -12936,7 +12936,7 @@
   <Lines>
     <VendorProductID>5705858708775</VendorProductID>
     <ProductBarcode>212-303</ProductBarcode>
-    <Quantity>195</Quantity>
+    <Quantity>170</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>504</BackOrderQty>
     <BackOrderDate>2027-02-26</BackOrderDate>
@@ -12968,7 +12968,7 @@
   <Lines>
     <VendorProductID>5705858712994</VendorProductID>
     <ProductBarcode>212-317</ProductBarcode>
-    <Quantity>76</Quantity>
+    <Quantity>77</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>336</BackOrderQty>
     <BackOrderDate>2027-02-26</BackOrderDate>
@@ -12984,7 +12984,7 @@
   <Lines>
     <VendorProductID>5705858708829</VendorProductID>
     <ProductBarcode>212-320</ProductBarcode>
-    <Quantity>53</Quantity>
+    <Quantity>52</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>336</BackOrderQty>
     <BackOrderDate>2027-02-26</BackOrderDate>
@@ -13264,7 +13264,7 @@
   <Lines>
     <VendorProductID>9001567401324</VendorProductID>
     <ProductBarcode>213-126</ProductBarcode>
-    <Quantity>28</Quantity>
+    <Quantity>27</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -14042,7 +14042,7 @@
   <Lines>
     <VendorProductID>5705858059099</VendorProductID>
     <ProductBarcode>480-401</ProductBarcode>
-    <Quantity>411</Quantity>
+    <Quantity>410</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>400</BackOrderQty>
     <BackOrderDate>2026-11-06</BackOrderDate>
@@ -14076,7 +14076,7 @@
   <Lines>
     <VendorProductID>5705858708614</VendorProductID>
     <ProductBarcode>505-195</ProductBarcode>
-    <Quantity>17</Quantity>
+    <Quantity>16</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>11</BackOrderQty>
     <BackOrderDate>2026-10-28</BackOrderDate>
@@ -14442,7 +14442,7 @@
   <Lines>
     <VendorProductID>7290103121983</VendorProductID>
     <ProductBarcode>540-027</ProductBarcode>
-    <Quantity>15</Quantity>
+    <Quantity>14</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>15</BackOrderQty>
     <BackOrderDate>2026-12-18</BackOrderDate>
@@ -14652,7 +14652,7 @@
     <ProductBarcode>540-056</ProductBarcode>
     <Quantity>7</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>8</BackOrderQty>
+    <BackOrderQty>7</BackOrderQty>
     <BackOrderDate>2026-12-18</BackOrderDate>
   </Lines>
   <Lines>
@@ -14818,9 +14818,9 @@
   <Lines>
     <VendorProductID>7290103122805</VendorProductID>
     <ProductBarcode>540-081</ProductBarcode>
-    <Quantity>5</Quantity>
+    <Quantity>4</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>3</BackOrderQty>
+    <BackOrderQty>4</BackOrderQty>
     <BackOrderDate>2026-12-18</BackOrderDate>
   </Lines>
   <Lines>
@@ -14954,7 +14954,7 @@
   <Lines>
     <VendorProductID>7290108137927</VendorProductID>
     <ProductBarcode>540-108</ProductBarcode>
-    <Quantity>69</Quantity>
+    <Quantity>68</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -14970,7 +14970,7 @@
   <Lines>
     <VendorProductID>5705858707754</VendorProductID>
     <ProductBarcode>540-110</ProductBarcode>
-    <Quantity>23</Quantity>
+    <Quantity>22</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -15162,7 +15162,7 @@
   <Lines>
     <VendorProductID>7290108601237</VendorProductID>
     <ProductBarcode>540-128</ProductBarcode>
-    <Quantity>4</Quantity>
+    <Quantity>3</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -15194,7 +15194,7 @@
   <Lines>
     <VendorProductID>5705858710617</VendorProductID>
     <ProductBarcode>540-132</ProductBarcode>
-    <Quantity>4</Quantity>
+    <Quantity>3</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -15218,7 +15218,7 @@
   <Lines>
     <VendorProductID>5705858710648</VendorProductID>
     <ProductBarcode>540-135</ProductBarcode>
-    <Quantity>4</Quantity>
+    <Quantity>3</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -15226,7 +15226,7 @@
   <Lines>
     <VendorProductID>5705858710655</VendorProductID>
     <ProductBarcode>540-136</ProductBarcode>
-    <Quantity>4</Quantity>
+    <Quantity>3</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -17204,7 +17204,7 @@
   <Lines>
     <VendorProductID>5705858702476</VendorProductID>
     <ProductBarcode>780-013</ProductBarcode>
-    <Quantity>827</Quantity>
+    <Quantity>826</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -17300,7 +17300,7 @@
   <Lines>
     <VendorProductID>5705858717494</VendorProductID>
     <ProductBarcode>780-052</ProductBarcode>
-    <Quantity>280</Quantity>
+    <Quantity>279</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -17364,7 +17364,7 @@
   <Lines>
     <VendorProductID>5705858719870</VendorProductID>
     <ProductBarcode>780-085</ProductBarcode>
-    <Quantity>790</Quantity>
+    <Quantity>789</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -17388,7 +17388,7 @@
   <Lines>
     <VendorProductID>5705858717456</VendorProductID>
     <ProductBarcode>780-090</ProductBarcode>
-    <Quantity>540</Quantity>
+    <Quantity>539</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -17396,7 +17396,7 @@
   <Lines>
     <VendorProductID>5705858717463</VendorProductID>
     <ProductBarcode>780-091</ProductBarcode>
-    <Quantity>348</Quantity>
+    <Quantity>347</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -17404,7 +17404,7 @@
   <Lines>
     <VendorProductID>5705858717470</VendorProductID>
     <ProductBarcode>780-092</ProductBarcode>
-    <Quantity>260</Quantity>
+    <Quantity>259</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -17420,7 +17420,7 @@
   <Lines>
     <VendorProductID>5705858728230</VendorProductID>
     <ProductBarcode>780-098</ProductBarcode>
-    <Quantity>461</Quantity>
+    <Quantity>460</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -17652,7 +17652,7 @@
   <Lines>
     <VendorProductID>5705858076324</VendorProductID>
     <ProductBarcode>780-186</ProductBarcode>
-    <Quantity>6</Quantity>
+    <Quantity>5</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -17668,7 +17668,7 @@
   <Lines>
     <VendorProductID>5705858722634</VendorProductID>
     <ProductBarcode>780-190</ProductBarcode>
-    <Quantity>167</Quantity>
+    <Quantity>166</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -17780,7 +17780,7 @@
   <Lines>
     <VendorProductID>5705858719795</VendorProductID>
     <ProductBarcode>780-215</ProductBarcode>
-    <Quantity>458</Quantity>
+    <Quantity>457</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -17836,7 +17836,7 @@
   <Lines>
     <VendorProductID>5705858719825</VendorProductID>
     <ProductBarcode>780-235</ProductBarcode>
-    <Quantity>410</Quantity>
+    <Quantity>408</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -17892,7 +17892,7 @@
   <Lines>
     <VendorProductID>5705858719856</VendorProductID>
     <ProductBarcode>780-300</ProductBarcode>
-    <Quantity>162</Quantity>
+    <Quantity>161</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -17924,7 +17924,7 @@
   <Lines>
     <VendorProductID>5705858076218</VendorProductID>
     <ProductBarcode>780-310</ProductBarcode>
-    <Quantity>199</Quantity>
+    <Quantity>198</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -18660,7 +18660,7 @@
   <Lines>
     <VendorProductID>5705858724515</VendorProductID>
     <ProductBarcode>801-010PC</ProductBarcode>
-    <Quantity>36</Quantity>
+    <Quantity>30</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>300</BackOrderQty>
     <BackOrderDate>2026-11-11</BackOrderDate>
@@ -18668,7 +18668,7 @@
   <Lines>
     <VendorProductID>5705858726137</VendorProductID>
     <ProductBarcode>801-012PC</ProductBarcode>
-    <Quantity>43</Quantity>
+    <Quantity>42</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>55</BackOrderQty>
     <BackOrderDate>2026-10-07</BackOrderDate>
@@ -18750,7 +18750,7 @@
   <Lines>
     <VendorProductID>5705858077970</VendorProductID>
     <ProductBarcode>801-051PC</ProductBarcode>
-    <Quantity>60</Quantity>
+    <Quantity>57</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>250</BackOrderQty>
     <BackOrderDate>2027-03-04</BackOrderDate>
@@ -19250,10 +19250,10 @@
   <Lines>
     <VendorProductID>5705858724799</VendorProductID>
     <ProductBarcode>801-102PC</ProductBarcode>
-    <Quantity>307</Quantity>
+    <Quantity>595</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>288</BackOrderQty>
-    <BackOrderDate>2026-11-11</BackOrderDate>
+    <BackOrderQty>144</BackOrderQty>
+    <BackOrderDate>2026-12-24</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>
@@ -19304,10 +19304,10 @@
   <Lines>
     <VendorProductID>5705858724843</VendorProductID>
     <ProductBarcode>801-105PC</ProductBarcode>
-    <Quantity>139</Quantity>
+    <Quantity>427</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>288</BackOrderQty>
-    <BackOrderDate>2026-11-11</BackOrderDate>
+    <BackOrderQty>144</BackOrderQty>
+    <BackOrderDate>2026-12-24</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>
@@ -19452,7 +19452,7 @@
   <Lines>
     <VendorProductID>5705858729701</VendorProductID>
     <ProductBarcode>801-160</ProductBarcode>
-    <Quantity>2488</Quantity>
+    <Quantity>2478</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>512</BackOrderQty>
     <BackOrderDate>2027-01-29</BackOrderDate>
@@ -19476,10 +19476,10 @@
   <Lines>
     <VendorProductID>5705858729428</VendorProductID>
     <ProductBarcode>801-202PC</ProductBarcode>
-    <Quantity>190</Quantity>
+    <Quantity>262</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>72</BackOrderQty>
-    <BackOrderDate>2026-11-11</BackOrderDate>
+    <BackOrderQty>360</BackOrderQty>
+    <BackOrderDate>2027-03-05</BackOrderDate>
   </Lines>
   <Lines>
     <VendorProductID>5705858729435</VendorProductID>
@@ -19644,7 +19644,7 @@
   <Lines>
     <VendorProductID>5705858013442</VendorProductID>
     <ProductBarcode>802-253</ProductBarcode>
-    <Quantity>2820</Quantity>
+    <Quantity>2796</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>1260</BackOrderQty>
     <BackOrderDate>2027-01-22</BackOrderDate>
@@ -19660,7 +19660,7 @@
   <Lines>
     <VendorProductID>5705858012339</VendorProductID>
     <ProductBarcode>802-255</ProductBarcode>
-    <Quantity>815</Quantity>
+    <Quantity>813</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>504</BackOrderQty>
     <BackOrderDate>2027-01-22</BackOrderDate>
@@ -19772,7 +19772,7 @@
   <Lines>
     <VendorProductID>5705858080703</VendorProductID>
     <ProductBarcode>802-406</ProductBarcode>
-    <Quantity>8971</Quantity>
+    <Quantity>8956</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>12960</BackOrderQty>
     <BackOrderDate>2026-12-11</BackOrderDate>
@@ -19988,7 +19988,7 @@
   <Lines>
     <VendorProductID>8714579046537</VendorProductID>
     <ProductBarcode>804-033</ProductBarcode>
-    <Quantity>319</Quantity>
+    <Quantity>318</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>216</BackOrderQty>
     <BackOrderDate>2026-11-06</BackOrderDate>
@@ -20320,7 +20320,7 @@
   <Lines>
     <VendorProductID>8714579046568</VendorProductID>
     <ProductBarcode>804-186</ProductBarcode>
-    <Quantity>1052</Quantity>
+    <Quantity>1051</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>1080</BackOrderQty>
     <BackOrderDate>2027-03-19</BackOrderDate>
@@ -21330,7 +21330,7 @@
     <ProductBarcode>804-718</ProductBarcode>
     <Quantity>17</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>133</BackOrderQty>
+    <BackOrderQty>132</BackOrderQty>
     <BackOrderDate>2026-12-03</BackOrderDate>
   </Lines>
   <Lines>
@@ -21338,7 +21338,7 @@
     <ProductBarcode>804-719</ProductBarcode>
     <Quantity>17</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>133</BackOrderQty>
+    <BackOrderQty>132</BackOrderQty>
     <BackOrderDate>2026-12-03</BackOrderDate>
   </Lines>
   <Lines>
@@ -21346,7 +21346,7 @@
     <ProductBarcode>804-720</ProductBarcode>
     <Quantity>0</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>180</BackOrderQty>
+    <BackOrderQty>178</BackOrderQty>
     <BackOrderDate>2026-12-03</BackOrderDate>
   </Lines>
   <Lines>
@@ -21362,7 +21362,7 @@
     <ProductBarcode>804-722</ProductBarcode>
     <Quantity>0</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>180</BackOrderQty>
+    <BackOrderQty>178</BackOrderQty>
     <BackOrderDate>2026-12-03</BackOrderDate>
   </Lines>
   <Lines>
@@ -21370,7 +21370,7 @@
     <ProductBarcode>804-723</ProductBarcode>
     <Quantity>0</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>180</BackOrderQty>
+    <BackOrderQty>178</BackOrderQty>
     <BackOrderDate>2026-12-03</BackOrderDate>
   </Lines>
   <Lines>
@@ -21440,7 +21440,7 @@
   <Lines>
     <VendorProductID>8714579006630</VendorProductID>
     <ProductBarcode>805-061</ProductBarcode>
-    <Quantity>269</Quantity>
+    <Quantity>268</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -21592,7 +21592,7 @@
   <Lines>
     <VendorProductID>8714579004797</VendorProductID>
     <ProductBarcode>805-126</ProductBarcode>
-    <Quantity>41</Quantity>
+    <Quantity>40</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -21736,7 +21736,7 @@
   <Lines>
     <VendorProductID>8714579005961</VendorProductID>
     <ProductBarcode>805-295</ProductBarcode>
-    <Quantity>1410</Quantity>
+    <Quantity>1408</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>2700</BackOrderQty>
     <BackOrderDate>2027-03-19</BackOrderDate>
@@ -22088,7 +22088,7 @@
   <Lines>
     <VendorProductID>5705858704166</VendorProductID>
     <ProductBarcode>805-435</ProductBarcode>
-    <Quantity>404</Quantity>
+    <Quantity>403</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -22276,7 +22276,7 @@
   <Lines>
     <VendorProductID>5705858708478</VendorProductID>
     <ProductBarcode>805-464</ProductBarcode>
-    <Quantity>1513</Quantity>
+    <Quantity>1509</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>380</BackOrderQty>
     <BackOrderDate>2027-01-15</BackOrderDate>
@@ -22326,7 +22326,7 @@
   <Lines>
     <VendorProductID>5705858720524</VendorProductID>
     <ProductBarcode>805-470</ProductBarcode>
-    <Quantity>1538</Quantity>
+    <Quantity>1537</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -22384,7 +22384,7 @@
   <Lines>
     <VendorProductID>5705858034782</VendorProductID>
     <ProductBarcode>805-475</ProductBarcode>
-    <Quantity>2932</Quantity>
+    <Quantity>2929</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -23138,7 +23138,7 @@
   <Lines>
     <VendorProductID>5705858077505</VendorProductID>
     <ProductBarcode>805-648</ProductBarcode>
-    <Quantity>763</Quantity>
+    <Quantity>762</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -23258,7 +23258,7 @@
   <Lines>
     <VendorProductID>5705858057835</VendorProductID>
     <ProductBarcode>805-710</ProductBarcode>
-    <Quantity>207</Quantity>
+    <Quantity>206</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>126</BackOrderQty>
     <BackOrderDate>2027-01-29</BackOrderDate>
@@ -23266,7 +23266,7 @@
   <Lines>
     <VendorProductID>5705858069074</VendorProductID>
     <ProductBarcode>805-712</ProductBarcode>
-    <Quantity>150</Quantity>
+    <Quantity>149</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -23274,7 +23274,7 @@
   <Lines>
     <VendorProductID>5705858063911</VendorProductID>
     <ProductBarcode>805-715</ProductBarcode>
-    <Quantity>180</Quantity>
+    <Quantity>178</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -23282,7 +23282,7 @@
   <Lines>
     <VendorProductID>5705858063959</VendorProductID>
     <ProductBarcode>805-719</ProductBarcode>
-    <Quantity>180</Quantity>
+    <Quantity>178</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -23290,7 +23290,7 @@
   <Lines>
     <VendorProductID>5705858063829</VendorProductID>
     <ProductBarcode>805-720</ProductBarcode>
-    <Quantity>1800</Quantity>
+    <Quantity>1788</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -23298,7 +23298,7 @@
   <Lines>
     <VendorProductID>5705858063904</VendorProductID>
     <ProductBarcode>805-724</ProductBarcode>
-    <Quantity>180</Quantity>
+    <Quantity>178</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -23306,7 +23306,7 @@
   <Lines>
     <VendorProductID>5705858069005</VendorProductID>
     <ProductBarcode>805-725</ProductBarcode>
-    <Quantity>150</Quantity>
+    <Quantity>149</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -23314,7 +23314,7 @@
   <Lines>
     <VendorProductID>5705858069043</VendorProductID>
     <ProductBarcode>805-733</ProductBarcode>
-    <Quantity>150</Quantity>
+    <Quantity>149</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -23322,7 +23322,7 @@
   <Lines>
     <VendorProductID>5705858069050</VendorProductID>
     <ProductBarcode>805-734</ProductBarcode>
-    <Quantity>150</Quantity>
+    <Quantity>149</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -23338,7 +23338,7 @@
   <Lines>
     <VendorProductID>5705858702667</VendorProductID>
     <ProductBarcode>805-736</ProductBarcode>
-    <Quantity>150</Quantity>
+    <Quantity>149</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -23354,7 +23354,7 @@
   <Lines>
     <VendorProductID>5705858702742</VendorProductID>
     <ProductBarcode>805-744</ProductBarcode>
-    <Quantity>150</Quantity>
+    <Quantity>149</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -23370,7 +23370,7 @@
   <Lines>
     <VendorProductID>5705858702766</VendorProductID>
     <ProductBarcode>805-746</ProductBarcode>
-    <Quantity>150</Quantity>
+    <Quantity>149</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -23394,7 +23394,7 @@
   <Lines>
     <VendorProductID>5705858700403</VendorProductID>
     <ProductBarcode>805-750</ProductBarcode>
-    <Quantity>180</Quantity>
+    <Quantity>178</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -23482,7 +23482,7 @@
   <Lines>
     <VendorProductID>5705858712017</VendorProductID>
     <ProductBarcode>805-787</ProductBarcode>
-    <Quantity>489</Quantity>
+    <Quantity>488</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -23674,7 +23674,7 @@
   <Lines>
     <VendorProductID>8718868708991</VendorProductID>
     <ProductBarcode>805-835</ProductBarcode>
-    <Quantity>16</Quantity>
+    <Quantity>15</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>30</BackOrderQty>
     <BackOrderDate>2027-01-29</BackOrderDate>
@@ -23858,7 +23858,7 @@
   <Lines>
     <VendorProductID>5705858712932</VendorProductID>
     <ProductBarcode>805-881</ProductBarcode>
-    <Quantity>477</Quantity>
+    <Quantity>476</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>196</BackOrderQty>
     <BackOrderDate>2027-01-22</BackOrderDate>
@@ -23874,7 +23874,7 @@
   <Lines>
     <VendorProductID>5705858712956</VendorProductID>
     <ProductBarcode>805-883</ProductBarcode>
-    <Quantity>477</Quantity>
+    <Quantity>476</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>196</BackOrderQty>
     <BackOrderDate>2027-01-22</BackOrderDate>
@@ -24426,7 +24426,7 @@
   <Lines>
     <VendorProductID>6973383151390</VendorProductID>
     <ProductBarcode>805-973</ProductBarcode>
-    <Quantity>24</Quantity>
+    <Quantity>23</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -24650,7 +24650,7 @@
   <Lines>
     <VendorProductID>5705858713472</VendorProductID>
     <ProductBarcode>806-255</ProductBarcode>
-    <Quantity>53</Quantity>
+    <Quantity>52</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>20</BackOrderQty>
     <BackOrderDate>2027-03-05</BackOrderDate>
@@ -24714,7 +24714,7 @@
   <Lines>
     <VendorProductID>5705858713618</VendorProductID>
     <ProductBarcode>806-284</ProductBarcode>
-    <Quantity>77</Quantity>
+    <Quantity>76</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>20</BackOrderQty>
     <BackOrderDate>2027-03-05</BackOrderDate>
@@ -24722,7 +24722,7 @@
   <Lines>
     <VendorProductID>5705858713625</VendorProductID>
     <ProductBarcode>806-284B</ProductBarcode>
-    <Quantity>77</Quantity>
+    <Quantity>76</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>20</BackOrderQty>
     <BackOrderDate>2027-03-05</BackOrderDate>
@@ -24746,7 +24746,7 @@
   <Lines>
     <VendorProductID>5705858713656</VendorProductID>
     <ProductBarcode>806-284SB</ProductBarcode>
-    <Quantity>53</Quantity>
+    <Quantity>52</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>20</BackOrderQty>
     <BackOrderDate>2027-03-05</BackOrderDate>
@@ -24754,7 +24754,7 @@
   <Lines>
     <VendorProductID>5705858713663</VendorProductID>
     <ProductBarcode>806-284SX</ProductBarcode>
-    <Quantity>53</Quantity>
+    <Quantity>52</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>20</BackOrderQty>
     <BackOrderDate>2027-03-05</BackOrderDate>
@@ -24779,6 +24779,62 @@
     <VendorProductID>5705858713755</VendorProductID>
     <ProductBarcode>806-289SX</ProductBarcode>
     <Quantity>26</Quantity>
+    <DateCountedOn>2026-10-14</DateCountedOn>
+    <BackOrderQty />
+    <BackOrderDate />
+  </Lines>
+  <Lines>
+    <VendorProductID>5705858087634</VendorProductID>
+    <ProductBarcode>806-400</ProductBarcode>
+    <Quantity>0</Quantity>
+    <DateCountedOn>2026-10-14</DateCountedOn>
+    <BackOrderQty />
+    <BackOrderDate />
+  </Lines>
+  <Lines>
+    <VendorProductID>5705858087641</VendorProductID>
+    <ProductBarcode>806-401</ProductBarcode>
+    <Quantity>0</Quantity>
+    <DateCountedOn>2026-10-14</DateCountedOn>
+    <BackOrderQty />
+    <BackOrderDate />
+  </Lines>
+  <Lines>
+    <VendorProductID>5705858087658</VendorProductID>
+    <ProductBarcode>806-402</ProductBarcode>
+    <Quantity>0</Quantity>
+    <DateCountedOn>2026-10-14</DateCountedOn>
+    <BackOrderQty />
+    <BackOrderDate />
+  </Lines>
+  <Lines>
+    <VendorProductID>5705858087665</VendorProductID>
+    <ProductBarcode>806-403</ProductBarcode>
+    <Quantity>0</Quantity>
+    <DateCountedOn>2026-10-14</DateCountedOn>
+    <BackOrderQty />
+    <BackOrderDate />
+  </Lines>
+  <Lines>
+    <VendorProductID>5705858087672</VendorProductID>
+    <ProductBarcode>806-404</ProductBarcode>
+    <Quantity>0</Quantity>
+    <DateCountedOn>2026-10-14</DateCountedOn>
+    <BackOrderQty />
+    <BackOrderDate />
+  </Lines>
+  <Lines>
+    <VendorProductID>5705858087689</VendorProductID>
+    <ProductBarcode>806-405</ProductBarcode>
+    <Quantity>0</Quantity>
+    <DateCountedOn>2026-10-14</DateCountedOn>
+    <BackOrderQty />
+    <BackOrderDate />
+  </Lines>
+  <Lines>
+    <VendorProductID>5705858087696</VendorProductID>
+    <ProductBarcode>806-406</ProductBarcode>
+    <Quantity>0</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -25212,7 +25268,7 @@
     <ProductBarcode>807-542</ProductBarcode>
     <Quantity>0</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
-    <BackOrderQty>7</BackOrderQty>
+    <BackOrderQty>6</BackOrderQty>
     <BackOrderDate>2026-10-30</BackOrderDate>
   </Lines>
   <Lines>
@@ -25610,7 +25666,7 @@
   <Lines>
     <VendorProductID>5705858086323</VendorProductID>
     <ProductBarcode>808-049</ProductBarcode>
-    <Quantity>9</Quantity>
+    <Quantity>8</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -25868,7 +25924,7 @@
   <Lines>
     <VendorProductID>5705858717746</VendorProductID>
     <ProductBarcode>809-002</ProductBarcode>
-    <Quantity>256</Quantity>
+    <Quantity>255</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -25972,7 +26028,7 @@
   <Lines>
     <VendorProductID>5705858718361</VendorProductID>
     <ProductBarcode>809-060</ProductBarcode>
-    <Quantity>36</Quantity>
+    <Quantity>35</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -26436,7 +26492,7 @@
   <Lines>
     <VendorProductID>5705858711164</VendorProductID>
     <ProductBarcode>890-051</ProductBarcode>
-    <Quantity>690</Quantity>
+    <Quantity>689</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>1800</BackOrderQty>
     <BackOrderDate>2027-02-05</BackOrderDate>
@@ -26444,7 +26500,7 @@
   <Lines>
     <VendorProductID>5705858711171</VendorProductID>
     <ProductBarcode>890-052</ProductBarcode>
-    <Quantity>68</Quantity>
+    <Quantity>67</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>500</BackOrderQty>
     <BackOrderDate>2027-02-05</BackOrderDate>
@@ -27574,7 +27630,7 @@
   <Lines>
     <VendorProductID>5705858032016</VendorProductID>
     <ProductBarcode>L100-102</ProductBarcode>
-    <Quantity>757</Quantity>
+    <Quantity>754</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>250</BackOrderQty>
     <BackOrderDate>2026-11-03</BackOrderDate>
@@ -27590,7 +27646,7 @@
   <Lines>
     <VendorProductID>5705858032023</VendorProductID>
     <ProductBarcode>L100-104</ProductBarcode>
-    <Quantity>675</Quantity>
+    <Quantity>674</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty>300</BackOrderQty>
     <BackOrderDate>2026-11-06</BackOrderDate>
@@ -27794,7 +27850,7 @@
   <Lines>
     <VendorProductID>5705858048123</VendorProductID>
     <ProductBarcode>R102001-1</ProductBarcode>
-    <Quantity>46</Quantity>
+    <Quantity>45</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -27986,7 +28042,7 @@
   <Lines>
     <VendorProductID>5705858066417</VendorProductID>
     <ProductBarcode>R111388-2</ProductBarcode>
-    <Quantity>19</Quantity>
+    <Quantity>18</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -32036,7 +32092,7 @@
   <Lines>
     <VendorProductID>5705858706719</VendorProductID>
     <ProductBarcode>W220</ProductBarcode>
-    <Quantity>814</Quantity>
+    <Quantity>813</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -32116,7 +32172,7 @@
   <Lines>
     <VendorProductID>5704452001114</VendorProductID>
     <ProductBarcode>WA110</ProductBarcode>
-    <Quantity>1006</Quantity>
+    <Quantity>1005</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -32132,7 +32188,7 @@
   <Lines>
     <VendorProductID>5705858707631</VendorProductID>
     <ProductBarcode>WA118</ProductBarcode>
-    <Quantity>1798</Quantity>
+    <Quantity>1793</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -32148,7 +32204,7 @@
   <Lines>
     <VendorProductID>5704452001565</VendorProductID>
     <ProductBarcode>WA155</ProductBarcode>
-    <Quantity>1563</Quantity>
+    <Quantity>1558</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -32156,7 +32212,7 @@
   <Lines>
     <VendorProductID>5704452002005</VendorProductID>
     <ProductBarcode>WA200</ProductBarcode>
-    <Quantity>1833</Quantity>
+    <Quantity>1832</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -32212,7 +32268,7 @@
   <Lines>
     <VendorProductID>5705858062891</VendorProductID>
     <ProductBarcode>WA910</ProductBarcode>
-    <Quantity>388</Quantity>
+    <Quantity>387</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
@@ -32220,7 +32276,7 @@
   <Lines>
     <VendorProductID>5705858062907</VendorProductID>
     <ProductBarcode>WA912</ProductBarcode>
-    <Quantity>166</Quantity>
+    <Quantity>165</Quantity>
     <DateCountedOn>2026-10-14</DateCountedOn>
     <BackOrderQty />
     <BackOrderDate />
