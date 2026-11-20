@@ -36,5 +36,6 @@ jobs:
           else
             git add stock.xml
             git commit -m "Update stock $(date -u +%Y-%m-%dT%H:%MZ)"
+            git pull --rebase
             git push
           fi

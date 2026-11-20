@@ -1,0 +1,49 @@
+name: Harvest pictures and web names
+
+# Looks up stock items on www.nshnordic.com and saves:
+#   item_web.csv    - picture path (for thumbnails) + website names for items
+#                     that have no name in item_names.csv
+#   name_report.csv - items whose website name differs from item_names.csv
+# item_names.csv itself is never changed by this job.
+on:
+  schedule:
+    # Once a day at 03:10 UTC (between the stock updates, so they don't collide).
+    - cron: "10 3 * * *"
+  workflow_dispatch:      # "Run workflow" button
+    inputs:
+      max_items:
+        description: "How many items to check in this run (e.g. 4000 for a full refresh)"
+        default: "600"
+      refresh_days:
+        description: "Re-check items last checked this many days ago or more (0 = all)"
+        default: "14"
+
+permissions:
+  contents: write
+
+jobs:
+  harvest:
+    runs-on: ubuntu-latest
+    timeout-minutes: 120
+    steps:
+      - name: Get the current website files
+        uses: actions/checkout@v5
+
+      - name: Look up items on nshnordic.com
+        env:
+          MAX_ITEMS: ${{ github.event.inputs.max_items }}
+          REFRESH_DAYS: ${{ github.event.inputs.refresh_days }}
+        run: python3 harvest_web.py
+
+      - name: Save the result (only if something changed)
+        run: |
+          git config user.name "stock-bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add item_web.csv name_report.csv
+          if git diff --cached --quiet; then
+            echo "Nothing changed - nothing to save."
+          else
+            git commit -m "Harvest web data $(date -u +%Y-%m-%dT%H:%MZ)"
+            git pull --rebase
+            git push
+          fi
