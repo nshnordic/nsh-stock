@@ -51,6 +51,18 @@
   .card.s-out{border-left-color:var(--ink-faint)}
   .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
   .left{min-width:0;flex:1 1 auto}
+  .thumb{flex:0 0 auto;width:84px;height:84px;border-radius:10px;overflow:hidden;background:#E0E0E0;
+    border:1px solid var(--line);display:block}
+  .thumb img{width:100%;height:100%;object-fit:contain;display:block}
+  .card-main{display:flex;gap:16px;align-items:flex-start;min-width:0;flex:1 1 260px}
+  @media (max-width:520px){
+    .card-top{flex-wrap:nowrap;gap:10px}
+    .card-main{flex:1 1 auto;gap:11px}
+    .thumb{width:60px;height:60px;border-radius:8px}
+    .qty{font-size:32px}
+    .idrow{flex-wrap:wrap;column-gap:7px;row-gap:0}
+    .idrow .lbl{min-width:0}
+  }
   .pname{font-size:18px;font-weight:660;color:var(--ink);line-height:1.35;margin-bottom:10px}
   .idrow{display:flex;align-items:center;gap:9px;font-family:var(--mono);font-size:15.5px;line-height:1.7;margin:3px 0}
   .idrow .lbl{color:var(--ink-faint);display:inline-block;min-width:54px}
@@ -213,7 +225,8 @@ var NSH_WORD = { en:"english", da:"danish", fi:"finnish", sv:"swedish" };
 /* ============================ APP ============================ */
 var lang = "en";
 var records = [];
-var NAMES = null;                 // { ITEMUPPER: {da,sv,fi,en} }
+var NAMES = null;                 // { ITEMUPPER: {da,sv,fi,en} }  curated names (primary)
+var WEB = null;                   // { ITEMUPPER: {img,da,sv,fi,en} } from the website harvest (secondary)
 var meta = { vendor:"NSH NORDIC AS", counted:"" };
 var MAX = 40;
 
@@ -277,11 +290,24 @@ function statusOf(r){
   if(r.qty<10) return {cls:'s-low',label:tr('stLow')};
   return {cls:'s-ok',label:tr('stOk')};
 }
+/* Name order: curated name in this language -> website name in this language
+   -> curated/website name in English -> Danish. item_names.csv always wins. */
 function nameFor(r){
-  if(!NAMES) return '';
-  var e = NAMES[(r.item||'').toUpperCase()];
-  if(!e) return '';
-  return (e[lang]||'').trim();
+  var k=(r.item||'').toUpperCase();
+  var c=(NAMES&&NAMES[k])||{}, w=(WEB&&WEB[k])||{};
+  return (c[lang]||w[lang]||c.en||w.en||c.da||w.da||'').trim();
+}
+/* Thumbnail straight from nshnordic.com (an <img> needs no CORS permission). */
+var IMG_BASE = 'https://www.nshnordic.com/Admin/Public/GetImage.ashx?image=';
+function thumbUrl(path,w){
+  return IMG_BASE+encodeURIComponent(path)+'&Width='+w+'&Background=E0E0E0&Format=jpg';
+}
+function thumbFor(r){
+  var w=WEB&&WEB[(r.item||'').toUpperCase()];
+  if(!w||!w.img) return '';
+  return '<a class="thumb" href="'+attr(nshUrl(r))+'" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">'+
+    '<img src="'+attr(thumbUrl(w.img,100))+'" srcset="'+attr(thumbUrl(w.img,100))+' 1x, '+attr(thumbUrl(w.img,200))+' 2x"'+
+    ' alt="" loading="lazy" decoding="async" width="84" height="84" onerror="this.parentNode.style.display=\'none\'"></a>';
 }
 function nshUrl(r){
   return 'https://www.nshnordic.com/'+(NSH_WORD[lang]||'english')+
@@ -304,6 +330,7 @@ function card(r,term){
   }
   return '<div class="card '+st.cls+'">'+
     '<div class="card-top">'+
+      '<div class="card-main">'+thumbFor(r)+
       '<div class="left">'+
         (nm ? '<div class="pname">'+esc(nm)+'</div>' : '')+
         '<div class="idrow"><span class="lbl">'+esc(tr('item'))+'</span>'+
@@ -311,6 +338,7 @@ function card(r,term){
         '<div class="idrow"><span class="lbl">'+esc(tr('ean'))+'</span>'+
           '<span class="val">'+hl(r.ean||'\u2014',term)+'</span>'+(r.ean?copyBtn(r.ean):'')+'</div>'+
         '<div class="status">'+esc(st.label)+'</div>'+
+      '</div>'+
       '</div>'+
       '<div class="qty-block"><div class="qty">'+r.qty+'</div><div class="qty-lbl">'+esc(tr('inStockLbl'))+'</div></div>'+
     '</div>'+
@@ -433,6 +461,21 @@ function loadNames(){    // optional layer; failure is silent
     .then(function(txt){ NAMES=buildNames(txt); if(q.value.trim()) search(); })
     .catch(function(){ /* names simply won't show */ });
 }
+function buildWeb(text){
+  var rows=parseCSV(text,';'), map={};
+  for(var i=1;i<rows.length;i++){                 // NSH Varenr.;Image;Web DK;Web SE;Web FI;Web UK;Checked
+    var r=rows[i]; if(!r||r.length<6) continue;
+    var item=(r[0]||'').trim(); if(!item) continue;
+    map[item.toUpperCase()]={ img:(r[1]||'').trim(), da:(r[2]||'').trim(), sv:(r[3]||'').trim(), fi:(r[4]||'').trim(), en:(r[5]||'').trim() };
+  }
+  return map;
+}
+function loadWeb(){      // optional layer (pictures + gap names); failure is silent
+  fetch('item_web.csv',{cache:'no-store'})
+    .then(function(r){ if(!r.ok) throw 0; return r.text(); })
+    .then(function(txt){ WEB=buildWeb(txt); if(q.value.trim()) search(); })
+    .catch(function(){ /* no pictures, curated names only */ });
+}
 function loadStock(){
   showLoader(tr('loading'),false);
   fetch('stock.xml',{cache:'no-store'})
@@ -472,6 +515,7 @@ clearBtn.addEventListener('click',function(){q.value='';search();q.focus();});
 setLang(lang,false);
 loadStock();
 loadNames();
+loadWeb();
 q.focus();
 </script>
 </body>
