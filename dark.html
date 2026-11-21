@@ -49,15 +49,24 @@
   .card.s-out{border-left-color:var(--ink-faint)}
   .card-top{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;flex-wrap:wrap}
   .left{min-width:0;flex:1 1 auto}
-  .thumb{flex:0 0 auto;width:84px;height:84px;border-radius:10px;overflow:hidden;background:#E0E0E0;
+  /* Layout A: picture left; name, stock and IDs to its right */
+  .a-top{display:flex;gap:18px;align-items:flex-start}
+  .a-main{min-width:0;flex:1 1 auto}
+  .thumb{flex:0 0 auto;width:126px;height:126px;border-radius:12px;overflow:hidden;background:#E0E0E0;
     border:1px solid var(--line);display:block}
   .thumb img{width:100%;height:100%;object-fit:contain;display:block}
-  .card-main{display:flex;gap:16px;align-items:flex-start;min-width:0;flex:1 1 260px}
+  .pname{overflow-wrap:anywhere}
+  .a-stock{display:flex;align-items:center;flex-wrap:wrap;gap:6px 12px;margin:2px 0 8px}
+  .a-stock .qty{font-size:38px}
+  .a-stock .unit{font-family:var(--mono);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--ink-faint)}
+  .a-stock .status{margin-top:0}
+  .ids-m{display:none}
   @media (max-width:520px){
-    .card-top{flex-wrap:nowrap;gap:10px}
-    .card-main{flex:1 1 auto;gap:11px}
-    .thumb{width:60px;height:60px;border-radius:8px}
-    .qty{font-size:32px}
+    .a-top{gap:13px}
+    .thumb{width:90px;height:90px;border-radius:10px}
+    .pname{font-size:16.5px}
+    .a-top.has-thumb .ids-d{display:none}
+    .a-top.has-thumb + .ids-m{display:block;margin-top:12px}
     .idrow{flex-wrap:wrap;column-gap:7px;row-gap:0}
     .idrow .lbl{min-width:0}
   }
@@ -152,7 +161,7 @@ var T = {
     sub:"Enter an NSH item number or EAN barcode to see current stock and any incoming batch.",
     placeholder:"e.g. 100-197  or  4032922010238",
     hint:"Matches partial item numbers and EANs. Try \u201c100-\u201d to browse a series.",
-    item:"Item no.", ean:"EAN", inStockLbl:"In stock",
+    item:"Item no.", ean:"EAN", inStockLbl:"In stock", unit:"pcs",
     stOk:"In stock", stLow:"Low stock", stOut:"Out of stock",
     incoming:"Incoming: <b>{n}</b> units \u2014 ready to be shipped <b>{d}</b>",
     incomingNoDate:"Incoming: <b>{n}</b> units",
@@ -169,7 +178,7 @@ var T = {
     sub:"Indtast et NSH-varenummer eller en EAN-stregkode for at se aktuel lagerbeholdning og eventuelle kommende leverancer.",
     placeholder:"f.eks. 100-197  eller  4032922010238",
     hint:"S\u00f8ger ogs\u00e5 p\u00e5 dele af varenumre og EAN. Pr\u00f8v \u201c100-\u201d for at se en serie.",
-    item:"Varenr.", ean:"EAN", inStockLbl:"P\u00e5 lager",
+    item:"Varenr.", ean:"EAN", inStockLbl:"P\u00e5 lager", unit:"stk.",
     stOk:"P\u00e5 lager", stLow:"Lav beholdning", stOut:"Ikke p\u00e5 lager",
     incoming:"Kommende: <b>{n}</b> stk. \u2014 klar til forsendelse <b>{d}</b>",
     incomingNoDate:"Kommende: <b>{n}</b> stk.",
@@ -186,7 +195,7 @@ var T = {
     sub:"Sy\u00f6t\u00e4 NSH-tuotenumero tai EAN-viivakoodi n\u00e4hd\u00e4ksesi varastosaldon ja mahdollisen saapuvan er\u00e4n.",
     placeholder:"esim. 100-197  tai  4032922010238",
     hint:"Hakee my\u00f6s osittaisilla tuotenumeroilla ja EAN-koodeilla. Kokeile \u201c100-\u201d selataksesi sarjaa.",
-    item:"Tuotenro", ean:"EAN", inStockLbl:"Varastossa",
+    item:"Tuotenro", ean:"EAN", inStockLbl:"Varastossa", unit:"kpl",
     stOk:"Varastossa", stLow:"V\u00e4h\u00e4n varastossa", stOut:"Ei varastossa",
     incoming:"Saapumassa: <b>{n}</b> kpl \u2014 valmis l\u00e4hetett\u00e4v\u00e4ksi <b>{d}</b>",
     incomingNoDate:"Saapumassa: <b>{n}</b> kpl",
@@ -203,7 +212,7 @@ var T = {
     sub:"Ange ett NSH-artikelnummer eller en EAN-streckkod f\u00f6r att se aktuellt lagersaldo och eventuell inkommande leverans.",
     placeholder:"t.ex. 100-197  eller  4032922010238",
     hint:"S\u00f6ker \u00e4ven p\u00e5 delar av artikelnummer och EAN. Prova \u201c100-\u201d f\u00f6r att bl\u00e4ddra i en serie.",
-    item:"Art.nr", ean:"EAN", inStockLbl:"I lager",
+    item:"Art.nr", ean:"EAN", inStockLbl:"I lager", unit:"st",
     stOk:"I lager", stLow:"L\u00e5gt saldo", stOut:"Slut i lager",
     incoming:"Inkommande: <b>{n}</b> st \u2014 redo att skickas <b>{d}</b>",
     incomingNoDate:"Inkommande: <b>{n}</b> st",
@@ -304,8 +313,8 @@ function thumbFor(r){
   var w=WEB&&WEB[(r.item||'').toUpperCase()];
   if(!w||!w.img) return '';
   return '<a class="thumb" href="'+attr(nshUrl(r))+'" target="_blank" rel="noopener" tabindex="-1" aria-hidden="true">'+
-    '<img src="'+attr(thumbUrl(w.img,100))+'" srcset="'+attr(thumbUrl(w.img,100))+' 1x, '+attr(thumbUrl(w.img,200))+' 2x"'+
-    ' alt="" loading="lazy" decoding="async" width="84" height="84" onerror="this.parentNode.style.display=\'none\'"></a>';
+    '<img src="'+attr(thumbUrl(w.img,150))+'" srcset="'+attr(thumbUrl(w.img,150))+' 1x, '+attr(thumbUrl(w.img,300))+' 2x"'+
+    ' alt="" loading="lazy" decoding="async" width="126" height="126" onerror="this.parentNode.style.display=\'none\'"></a>';
 }
 function nshUrl(r){
   return 'https://www.nshnordic.com/'+(NSH_WORD[lang]||'english')+
@@ -326,20 +335,22 @@ function card(r,term){
   } else if(r.qty<=0){
     extra = '<div class="note">'+esc(tr('zeroNote'))+'</div>';
   }
+  var ids =
+    '<div class="idrow"><span class="lbl">'+esc(tr('item'))+'</span>'+
+      '<span class="val">'+hl(r.item||'\u2014',term)+'</span>'+(r.item?copyBtn(r.item):'')+'</div>'+
+    '<div class="idrow"><span class="lbl">'+esc(tr('ean'))+'</span>'+
+      '<span class="val">'+hl(r.ean||'\u2014',term)+'</span>'+(r.ean?copyBtn(r.ean):'')+'</div>';
+  var th = thumbFor(r);
   return '<div class="card '+st.cls+'">'+
-    '<div class="card-top">'+
-      '<div class="card-main">'+thumbFor(r)+
-      '<div class="left">'+
+    '<div class="a-top'+(th?' has-thumb':'')+'">'+th+
+      '<div class="a-main">'+
         (nm ? '<div class="pname">'+esc(nm)+'</div>' : '')+
-        '<div class="idrow"><span class="lbl">'+esc(tr('item'))+'</span>'+
-          '<span class="val">'+hl(r.item||'\u2014',term)+'</span>'+(r.item?copyBtn(r.item):'')+'</div>'+
-        '<div class="idrow"><span class="lbl">'+esc(tr('ean'))+'</span>'+
-          '<span class="val">'+hl(r.ean||'\u2014',term)+'</span>'+(r.ean?copyBtn(r.ean):'')+'</div>'+
-        '<div class="status">'+esc(st.label)+'</div>'+
+        '<div class="a-stock"><span class="qty">'+r.qty+'</span><span class="unit">'+esc(tr('unit'))+'</span>'+
+          '<span class="status">'+esc(st.label)+'</span></div>'+
+        '<div class="ids-d">'+ids+'</div>'+
       '</div>'+
-      '</div>'+
-      '<div class="qty-block"><div class="qty">'+r.qty+'</div><div class="qty-lbl">'+esc(tr('inStockLbl'))+'</div></div>'+
     '</div>'+
+    '<div class="ids-m">'+ids+'</div>'+
     extra+
     '<div class="cardfoot">'+
       '<span class="counted">'+fill(tr('counted'),{d:esc(r.counted||'\u2014')})+'</span>'+
