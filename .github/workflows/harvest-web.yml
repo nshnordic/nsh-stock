@@ -7,16 +7,18 @@ name: Harvest pictures and web names
 # item_names.csv itself is never changed by this job.
 on:
   schedule:
-    # Once a day at 03:10 UTC (between the stock updates, so they don't collide).
-    - cron: "10 3 * * *"
-  workflow_dispatch:      # "Run workflow" button
+    # Twice a month: on the 1st and the 15th at 03:10 UTC
+    # (between the stock updates, so they don't collide).
+    # Each run checks every stock item, so nothing is left waiting.
+    - cron: "10 3 1,15 * *"
+  workflow_dispatch:      # "Run workflow" button - use it any time new items arrive
     inputs:
       max_items:
-        description: "How many items to check in this run (e.g. 4000 for a full refresh)"
-        default: "600"
+        description: "How many items to check in this run"
+        default: "5000"
       refresh_days:
-        description: "Re-check items last checked this many days ago or more (0 = all)"
-        default: "14"
+        description: "Only re-check items last checked this many days ago or more (0 = all)"
+        default: "10"
 
 permissions:
   contents: write
@@ -31,8 +33,8 @@ jobs:
 
       - name: Look up items on nshnordic.com
         env:
-          MAX_ITEMS: ${{ github.event.inputs.max_items }}
-          REFRESH_DAYS: ${{ github.event.inputs.refresh_days }}
+          MAX_ITEMS: ${{ github.event.inputs.max_items || '5000' }}
+          REFRESH_DAYS: ${{ github.event.inputs.refresh_days || '10' }}
         run: python3 harvest_web.py
 
       - name: Save the result (only if something changed)
